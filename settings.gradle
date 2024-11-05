@@ -1,0 +1,3 @@
+rootProject.name='TT_THINGS_APP'
+include ':app'
+include ':serviceLibrary'
