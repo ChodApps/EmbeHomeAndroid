@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.embehome.embehome.irb.viewmodel.RemoteCmnViewModel" />
+        <variable
+            name="tvEnum"
+            type="com.embehome.embehome.irb.RemoteButtons" />
+        <variable
+            name="v"
+            type="android.view.View" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".irb.fragment.RemoteCooler">
+
+    <ImageView
+        android:id="@+id/imageView149"
+        android:layout_width="@dimen/app_icon_wh"
+        android:layout_height="@dimen/app_icon_wh"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:padding="@dimen/app_icon_padding"
+        android:onClick="@{() -> viewModel.back()}"
+        android:src="@drawable/tt_cmn_enable_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:id="@+id/textView150"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/nunito_sans"
+        android:text="IR Blasters"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView149"
+        app:layout_constraintEnd_toStartOf="@+id/imageView213"
+        app:layout_constraintTop_toTopOf="@+id/imageView149" />
+
+    <TextView
+        android:id="@+id/textView151"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_sans"
+        android:text="Cooler"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView150"
+        app:layout_constraintTop_toBottomOf="@+id/textView150" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4">
+
+        <ImageView
+            android:id="@+id/imageView170"
+            android:layout_width="@dimen/full_remote_large_btn_width"
+            android:layout_height="@dimen/full_remote_large_btn_height"
+            android:layout_marginTop="32dp"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_POWER)}"
+            android:src="@drawable/irb_cooler_button_power"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/imageView171"
+            android:layout_width="@dimen/full_remote_large_btn_width"
+            android:layout_height="@dimen/full_remote_small_btn_height"
+            android:layout_marginTop="16dp"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_LEVEL_1)}"
+            android:src="@drawable/irb_cooler_button_1"
+            app:layout_constraintEnd_toEndOf="@+id/imageView170"
+            app:layout_constraintStart_toStartOf="@+id/imageView170"
+            app:layout_constraintTop_toBottomOf="@+id/imageView170" />
+
+        <ImageView
+            android:id="@+id/imageView172"
+            android:layout_width="@dimen/full_remote_large_btn_width"
+            android:layout_height="@dimen/full_remote_med_btn_width"
+            android:layout_marginTop="8dp"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_LEVEL_2)}"
+            android:src="@drawable/irb_cooler_button_2"
+            app:layout_constraintEnd_toEndOf="@+id/imageView171"
+            app:layout_constraintStart_toStartOf="@+id/imageView171"
+            app:layout_constraintTop_toBottomOf="@+id/imageView171" />
+
+        <ImageView
+            android:id="@+id/imageView173"
+            android:layout_width="@dimen/full_remote_large_btn_width"
+            android:layout_height="@dimen/full_remote_large_btn_height"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_LEVEL_3)}"
+            android:src="@drawable/irb_cooler_button_3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView172"
+            app:layout_constraintStart_toStartOf="@+id/imageView172"
+            app:layout_constraintTop_toBottomOf="@+id/imageView172"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/imageView174"
+            android:layout_width="@dimen/full_remote_med_btn_width"
+            android:layout_height="@dimen/full_remote_med_btn_height"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_COOL)}"
+            android:src="@drawable/irb_cooler_button_pump"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView176"
+            app:layout_constraintEnd_toStartOf="@+id/imageView176"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView176" />
+
+        <ImageView
+            android:id="@+id/imageView175"
+            android:layout_width="@dimen/full_remote_med_btn_width"
+            android:layout_height="@dimen/full_remote_med_btn_height"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="32dp"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_TIMER)}"
+            android:src="@drawable/irb_cooler_button_timer"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView176"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/imageView176"
+            app:layout_constraintTop_toTopOf="@+id/imageView176" />
+
+        <ImageView
+            android:id="@+id/imageView176"
+            android:layout_width="@dimen/full_remote_med_btn_width"
+            android:layout_height="@dimen/full_remote_med_btn_height"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_SWING)}"
+            android:src="@drawable/irb_cooler_button_swing"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView173"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/button33"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/save_remote"
+        android:onClick="@{() -> viewModel.saveRemote()}"
+        android:visibility="@{viewModel.editMode}"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView149"
+        app:layout_constraintEnd_toStartOf="@+id/textView150"
+        app:layout_constraintStart_toEndOf="@+id/imageView149"
+        app:layout_constraintTop_toTopOf="@+id/imageView149" />
+
+    <ImageView
+        android:id="@+id/imageView213"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:padding="12dp"
+        android:background="?attr/selectableItemBackground"
+        android:visibility="@{viewModel.editMode == v.VISIBLE ? v.GONE : v.VISIBLE}"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView149"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView149"
+        app:srcCompat="@drawable/ic_baseline_more_vert_24" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

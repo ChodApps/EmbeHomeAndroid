@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    tools:context=".instructions.HubInstructions">
+
+
+    <Button
+        android:id="@+id/button45"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView216"
+        style="@style/Instructions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/hub_add_instructions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button45" />
+
+    <TextView
+        android:id="@+id/textView217"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        style="@style/Instructions"
+        android:textColor="@android:color/holo_red_dark"
+        android:text="@string/hub_add_instruction_warning"
+        app:layout_constraintEnd_toEndOf="@+id/textView216"
+        app:layout_constraintStart_toStartOf="@+id/textView216"
+        app:layout_constraintTop_toBottomOf="@+id/textView216" />
+
+    <ImageView
+        android:id="@+id/imageView263"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/hub_instruction"
+        app:layout_constraintEnd_toEndOf="@+id/textView217"
+        app:layout_constraintStart_toStartOf="@+id/textView217"
+        app:layout_constraintTop_toBottomOf="@+id/textView217" />
+
+    <TextView
+        android:id="@+id/textView218"
+        style="@style/Instructions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/hub_add_instruction_note_1"
+        app:layout_constraintEnd_toEndOf="@+id/textView217"
+        app:layout_constraintStart_toStartOf="@+id/textView217"
+        app:layout_constraintTop_toBottomOf="@+id/imageView263" />
+
+    <TextView
+        android:id="@+id/textView219"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        style="@style/Instructions"
+        android:text="@string/hub_add_instruction_note_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView218"
+        app:layout_constraintStart_toStartOf="@+id/textView218"
+        app:layout_constraintTop_toBottomOf="@+id/textView218"
+        app:layout_constraintVertical_bias="0.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

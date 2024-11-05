@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home"
+    app:startDestination="@id/homeFrag">
+    <fragment
+        android:id="@+id/homeFrag"
+        android:name="com.embehome.embehome.Fragments.HomeFrag"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFrag_to_hubRegistration2"
+            app:destination="@id/hubRegistration"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_homeFrag_to_hubAdd"
+            app:destination="@id/hubAdd" />
+        <action
+            android:id="@+id/action_homeFrag_to_userProfile"
+            app:destination="@id/userProfile" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/hubRegistration"
+        android:name="com.embehome.embehome.Fragments.HubRegistration"
+        android:label="fragment_hub_registration">
+        <action
+            android:id="@+id/action_hubRegistration_to_hubAdd"
+            app:destination="@id/hubAdd"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/homeFrag"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/hubAdd"
+        android:name="com.embehome.embehome.Fragments.HubAdd"
+        android:label="fragment_hub_add"
+        tools:layout="@layout/fragment_hub_add" />
+    <fragment
+        android:id="@+id/userProfile"
+        android:name="com.embehome.embehome.Fragments.UserProfile"
+        android:label="UserProfile" >
+        <action
+            android:id="@+id/action_userProfile_to_changePassword2"
+            app:destination="@id/changePassword" />
+        <action
+            android:id="@+id/action_userProfile_to_webViewDisplay"
+            app:destination="@id/webViewDisplay" />
+        <action
+            android:id="@+id/action_userProfile_to_notificationPreference"
+            app:destination="@id/notificationPreference" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePassword"
+        android:name="com.embehome.embehome.Fragments.ChangePassword"
+        android:label="ChangePassword" />
+    <fragment
+        android:id="@+id/webViewDisplay"
+        android:name="com.embehome.embehome.Fragments.WebViewDisplay"
+        android:label="fragment_web_view_display"
+        tools:layout="@layout/fragment_web_view_display" >
+        <argument
+            android:name="url"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationPreference"
+        android:name="com.embehome.embehome.notification.NotificationPreference"
+        android:label="fragment_notification_prefrence"
+        tools:layout="@layout/fragment_notification_prefrence" />
+</navigation>

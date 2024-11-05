@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.embehome.embehome.viewModel.UserProfileViewModel" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        tools:context=".Fragments.UserProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="48dp"
+            android:background="@drawable/rounded"
+            android:onClick="@{() -> viewModel.changePassword()}"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView192">
+            <ImageView
+                android:padding="4dp"
+                android:id="@+id/imageView248"
+                android:layout_width="@dimen/setting_icon_w"
+                android:layout_height="@dimen/setting_icon_h"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/tt_cmn_enable_password_change" />
+            <TextView
+                android:gravity="center_horizontal"
+                android:id="@+id/textView188"
+                style="@style/Heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="15"
+                android:text="Change Password" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="48dp"
+            android:background="@drawable/rounded"
+            android:onClick="@{() -> viewModel.aboutUs()}"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout10">
+
+            <ImageView
+                android:padding="4dp"
+                android:layout_width="@dimen/setting_icon_w"
+                android:layout_height="@dimen/setting_icon_h"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/about_us_active" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                style="@style/Heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_weight="15"
+                android:text="About Us" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout10"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="48dp"
+            android:background="@drawable/rounded"
+            android:onClick="@{() -> viewModel.notificationPref()}"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+            <ImageView
+                android:padding="4dp"
+                android:layout_width="@dimen/setting_icon_w"
+                android:layout_height="@dimen/setting_icon_h"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/tt_notification_enable_ring" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                style="@style/Heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="15"
+                android:text="Notification Preferences" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout7"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="48dp"
+            android:background="@drawable/rounded"
+            android:onClick="@{() -> viewModel.contactUs()}"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+
+            <ImageView
+                android:padding="4dp"
+                android:layout_width="@dimen/setting_icon_w"
+                android:layout_height="@dimen/setting_icon_h"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/contact_us_active" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                style="@style/Heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="15"
+                android:text="Contact Us" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout8"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="48dp"
+            android:background="@drawable/rounded"
+            android:onClick="@{() -> viewModel.logOut()}"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
+            app:layout_constraintVertical_bias="0.0">
+
+           <ImageView
+                android:padding="4dp"
+                android:layout_width="@dimen/setting_icon_w"
+                android:layout_height="@dimen/setting_icon_h"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/tt_cmn_enable_logout" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                style="@style/Heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="15"
+                android:text="Log out" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linearLayout9"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="48dp"
+            android:background="@drawable/rounded"
+            android:onClick="@{() -> viewModel.deleteUser()}"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout8"
+            app:layout_constraintVertical_bias="0.0">
+
+            <ImageView
+                android:padding="4dp"
+                android:layout_width="@dimen/setting_icon_w"
+                android:layout_height="@dimen/setting_icon_h"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/tt_cmn_disable_delete" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                style="@style/Heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="15"
+                android:text="Delete Account" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:fontFamily="@font/nunito_sans"
+            android:onClick="@{() -> viewModel.logOut()}"
+            android:padding="@dimen/padding_large_10dp"
+            android:text="Log Out"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout8" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/nunito_sans"
+            android:onClick="@{() -> viewModel.changePassword()}"
+            android:padding="@dimen/padding_large_10dp"
+            android:text="Change Password"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView192" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="@dimen/app_icon_wh"
+            android:layout_height="@dimen/app_icon_wh"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:onClick="@{() -> viewModel.back()}"
+            android:padding="@dimen/app_icon_padding"
+            android:src="@drawable/tt_cmn_enable_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            android:text="SETTINGS"
+            android:textAlignment="center"
+            android:gravity="center"
+            style="@style/Title"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
+        <TextView
+            android:id="@+id/textView164"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_sans"
+            android:onClick="@{() -> viewModel.aboutUs()}"
+            android:padding="@dimen/padding_large_10dp"
+            android:text="About Us"
+            android:visibility="gone"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout6" />
+
+        <TextView
+            android:id="@+id/textView165"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.contactUs()}"
+            android:padding="@dimen/padding_large_10dp"
+            android:text="Contact Us"
+            android:visibility="gone"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView20"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:cardCornerRadius="60dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/cardBackgroundCircle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" >
+
+
+
+                <ImageView
+                    android:id="@+id/imageView251"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/tt_cmn_disable_male2" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+
+            android:id="@+id/textView192"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_margin="16dp"
+            style="@style/SubHeading"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:padding="@dimen/padding_small_5dp"
+            tools:text="email@tronx.com"
+            app:layout_constraintEnd_toEndOf="@+id/cardView20"
+            app:layout_constraintStart_toStartOf="@+id/cardView20"
+            app:layout_constraintTop_toBottomOf="@+id/cardView20" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

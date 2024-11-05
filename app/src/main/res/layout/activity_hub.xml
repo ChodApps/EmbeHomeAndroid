@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.embehome.embehome.viewModel.HubActivityViewModel" />
+
+        <variable
+            name="view"
+            type="android.view.View" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainbg"
+    tools:context=".Activity.HubActivity">
+
+    <!--<com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/bckground"
+        app:itemTextColor="@drawable/btm_nav_item_text"
+        app:itemIconTint="@color/bottomTextColorNonActive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:labelVisibilityMode="labeled"
+        android:visibility="@{viewModel.displayBottomBar ? view.VISIBLE : view.GONE}"
+        app:menu="@menu/room_bottom_bar_items" />-->
+    <com.qamar.curvedbottomnaviagtion.CurvedBottomNavigation
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:cbn_background="@color/black1"
+        app:cbn_fabColor="@color/colorPrimary"
+        app:cbn_iconColor="@color/white1"
+        app:cbn_height="62dp"
+        app:cbn_icon_size="24dp"
+        app:cbn_curve_radius="30dp"
+        app:cbn_selected_icon_size="48dp"
+        app:cbn_selectedIconColor="@color/white"
+        app:cbn_titleColor="@color/white1"
+        app:cbn_titleFont="@font/cairo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="@{viewModel.displayBottomBar ? view.VISIBLE : view.GONE}"
+        />
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/room" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

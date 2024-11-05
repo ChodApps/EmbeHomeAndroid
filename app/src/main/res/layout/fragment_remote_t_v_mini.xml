@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.embehome.embehome.irb.viewmodel.RemoteMiniTVViewModel" />
+        <variable
+            name="tvEnum"
+            type="com.embehome.embehome.irb.RemoteButtons" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".irb.fragment.RemoteTVMini">
+
+        <ImageView
+            android:id="@+id/imageView92"
+            android:layout_width="@dimen/full_remote_mini_btn_width"
+            android:layout_height="@dimen/full_remote_mini_btn_height"
+            android:padding="@dimen/padding_small_5dp"
+            android:src="@drawable/irb_cmn_button_volume_enable"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout13"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayout13"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout13" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout13"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView89"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView218"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/irb_cmn_mini_remote_body" />
+
+            <ImageView
+                android:id="@+id/imageView86"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:onClick="@{() -> viewModel.action(tvEnum.KEY_POWER)}"
+                android:src="@drawable/irb_cmn_button_mini_remote_power"
+                app:layout_constraintBottom_toTopOf="@+id/textView54"
+                app:layout_constraintEnd_toStartOf="@+id/textView54"
+                app:layout_constraintStart_toEndOf="@+id/textView55"
+                app:layout_constraintTop_toBottomOf="@+id/textView55" />
+
+            <ImageView
+                android:id="@+id/imageView90"
+                android:layout_width="@dimen/full_remote_small_btn_width"
+                android:layout_height="@dimen/full_remote_small_btn_height"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:onClick="@{() -> viewModel.action(tvEnum.KEY_MUTE)}"
+                android:src="@drawable/irb_cmn_button_mini_remote_mode"
+                app:layout_constraintBottom_toTopOf="@+id/imageView86"
+                app:layout_constraintEnd_toEndOf="@+id/imageView86"
+                app:layout_constraintHorizontal_bias=".5"
+                app:layout_constraintStart_toStartOf="@+id/imageView86"
+                app:layout_constraintTop_toTopOf="@+id/imageView218"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/imageView89"
+                android:layout_width="@dimen/full_remote_small_btn_width"
+                android:layout_height="@dimen/full_remote_small_btn_height"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:onClick="@{() -> viewModel.action(tvEnum.KEY_VOLUME_UP)}"
+                android:src="@drawable/irb_cmn_button_mini_remote_volume_plus"
+                app:layout_constraintEnd_toStartOf="@+id/imageView86"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView86" />
+
+            <ImageView
+                android:id="@+id/imageView88"
+                android:layout_width="@dimen/full_remote_small_btn_width"
+                android:layout_height="@dimen/full_remote_small_btn_height"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:onClick="@{() -> viewModel.action(tvEnum.KEY_CHANNEL_UP)}"
+                android:src="@drawable/irb_cmn_button_mini_remote_up"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/imageView86"
+                app:layout_constraintTop_toTopOf="@+id/imageView86" />
+
+            <ImageView
+                android:id="@+id/imageView93"
+                android:layout_width="@dimen/full_remote_small_btn_width"
+                android:layout_height="@dimen/full_remote_small_btn_height"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:onClick="@{() -> viewModel.action(tvEnum.KEY_VOLUME_DOWN)}"
+                android:src="@drawable/irb_cmn_button_mini_remote_volume_minus"
+                app:layout_constraintEnd_toStartOf="@+id/imageView86"
+                app:layout_constraintStart_toEndOf="@+id/imageView89"
+                app:layout_constraintTop_toBottomOf="@+id/imageView86" />
+
+            <ImageView
+                android:id="@+id/imageView87"
+                android:layout_width="@dimen/full_remote_small_btn_width"
+                android:layout_height="@dimen/full_remote_small_btn_height"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:onClick="@{() -> viewModel.action(tvEnum.KEY_CHANNEL_DOWN)}"
+                android:src="@drawable/irb_cmn_button_mini_remote_down"
+                app:layout_constraintEnd_toStartOf="@+id/imageView88"
+                app:layout_constraintStart_toEndOf="@+id/imageView86"
+                app:layout_constraintTop_toBottomOf="@+id/imageView86" />
+
+            <TextView
+                android:id="@+id/textView55"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.35"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias=".35" />
+
+            <TextView
+                android:id="@+id/textView54"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.65"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.65" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView89"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.8" />
+
+        <ImageView
+            android:id="@+id/imageView91"
+            android:layout_width="@dimen/full_remote_med_btn_width"
+            android:layout_height="@dimen/full_remote_med_btn_height"
+            android:layout_marginEnd="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_VOLUME_UP)}"
+            android:src="@drawable/irb_cmn_button_mini_remote_volume_plus"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView92"
+            app:layout_constraintEnd_toStartOf="@+id/imageView92"
+            app:layout_constraintTop_toTopOf="@+id/imageView92" />
+
+        <ImageView
+            android:id="@+id/imageView219"
+            android:layout_width="@dimen/full_remote_med_btn_width"
+            android:layout_height="@dimen/full_remote_med_btn_height"
+            android:layout_marginStart="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_VOLUME_DOWN)}"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView92"
+            app:layout_constraintStart_toEndOf="@+id/imageView92"
+            app:layout_constraintTop_toTopOf="@+id/imageView92"
+            app:srcCompat="@drawable/irb_cmn_button_mini_remote_volume_minus" />
+
+        <ImageView
+            android:id="@+id/imageView220"
+            android:layout_width="@dimen/full_remote_med_btn_width"
+            android:layout_height="@dimen/full_remote_med_btn_height"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_BACK)}"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/imageView91"
+            app:layout_constraintEnd_toStartOf="@+id/imageView91"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView92"
+            app:srcCompat="@drawable/irb_cmn_button_mini_remote_back" />
+
+        <ImageView
+            android:id="@+id/imageView221"
+            android:layout_width="@dimen/full_remote_med_btn_width"
+            android:layout_height="@dimen/full_remote_med_btn_height"
+            android:layout_marginStart="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_INFO)}"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/imageView219"
+            app:layout_constraintStart_toEndOf="@+id/imageView219"
+            app:layout_constraintTop_toTopOf="@+id/imageView92"
+            app:srcCompat="@drawable/irb_cmn_button_mini_remote_favorite" />
+
+        <ImageView
+            android:id="@+id/imageView222"
+            android:layout_width="@dimen/full_remote_small_btn_width"
+            android:layout_height="@dimen/full_remote_small_btn_height"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="@{() -> viewModel.fullRemote()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView221"
+            app:srcCompat="@drawable/irb_cmn_button_full_remote" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

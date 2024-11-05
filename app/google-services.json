@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "744231093385",
+    "project_id": "embehome-automations",
+    "storage_bucket": "embehome-automations.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744231093385:android:acf16edb237716ca16f258",
+        "android_client_info": {
+          "package_name": "com.embehome.embehome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "744231093385-1mais4929dnjidf0in3vnm2fp0pleipm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1k5FMgiL3qpvjm1MxpkZI6Vozw5uIZLc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "744231093385-1mais4929dnjidf0in3vnm2fp0pleipm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

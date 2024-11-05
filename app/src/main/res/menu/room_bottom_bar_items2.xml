@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:icon="@drawable/rules"
+        android:id="@+id/roomSwitchBoards2"
+        android:enabled="true"
+        android:visible="false"
+        android:title="Rules"/>
+    <item
+        android:id="@+id/roomScenes2"
+        android:enabled="true"
+        android:visible="false"
+        android:icon="@drawable/scene"
+        android:title="Scenes"/>
+    <item
+        android:id="@+id/roomFragment21"
+        android:icon="@drawable/bottom_navigation_hub"
+        android:enabled="true"
+        android:title="EmbeHome"/>
+    <item
+
+        android:id="@+id/roomRemotes2"
+        android:enabled="true"
+        android:visible="false"
+        android:icon="@drawable/remote"
+        android:title="Remotes"/>
+    <item
+        android:id="@+id/roomMenu2"
+        android:enabled="true"
+        android:visible="false"
+        android:icon="@drawable/settingsnew"
+        android:title="Settings"/>
+
+    
+</menu>

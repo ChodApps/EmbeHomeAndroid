@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="125dp"
+    app:cardCornerRadius="@dimen/radius_large_16dp"
+    android:layout_margin="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:id="@+id/imageView26"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/place_holder_2" />
+
+        <ImageView
+            android:id="@+id/imageView241"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/text_highlight_foreground" />
+
+        <TextView
+            android:id="@+id/room_scene_display_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rule Name"
+            style="@style/ListItemName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView260"
+            android:layout_width="@dimen/app_icon_wh"
+            android:layout_height="@dimen/app_icon_wh"
+            android:padding="@dimen/app_icon_padding"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/highlightBlack"
+            app:srcCompat="@drawable/tt_cmn_enable_delete" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView22"
+            android:layout_width="@dimen/app_round_btn"
+            android:layout_height="@dimen/app_round_btn"
+            android:layout_marginEnd="8dp"
+            app:cardBackgroundColor="@color/roundBtn"
+            app:cardCornerRadius="@dimen/app_icon_radius"
+            app:layout_constraintEnd_toStartOf="@+id/cardView27"
+            app:layout_constraintTop_toTopOf="@+id/cardView27">
+
+            <ImageView
+                android:layout_width="@dimen/app_round_btn"
+                android:layout_height="@dimen/app_round_btn"
+                android:padding="2dp"
+                android:src="@drawable/tt_cmn_enable_edit" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView27"
+            android:layout_width="@dimen/app_round_btn"
+            android:layout_height="@dimen/app_round_btn"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:cardBackgroundColor="@color/roundBtn"
+            app:cardCornerRadius="@dimen/app_icon_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="@dimen/app_round_btn"
+                android:layout_height="@dimen/app_round_btn"
+                android:padding="2dp"
+                android:src="@drawable/tt_cmn_enable_delete" />
+        </androidx.cardview.widget.CardView>
+
+
+        <ImageView
+            android:id="@+id/imageView261"
+            android:layout_width="@dimen/app_icon_wh"
+            android:layout_height="@dimen/app_icon_wh"
+            android:background="@color/highlightBlack"
+            android:padding="@dimen/app_icon_padding"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/imageView260"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/tt_cmn_enable_edit" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

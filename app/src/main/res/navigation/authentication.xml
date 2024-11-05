@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/authentication"
+    app:startDestination="@id/splash">
+    <fragment
+        android:id="@+id/login2"
+        android:name="com.embehome.embehome.Fragments.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login2_to_registration"
+            app:destination="@+id/registration"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_login2_to_home2"
+            app:destination="@id/home2" />
+        <action
+            android:id="@+id/action_login2_to_forgotPassword"
+            app:destination="@id/forgotPassword" />
+        <action
+            android:id="@+id/action_login2_to_OTPVerification"
+            app:destination="@id/OTPVerification" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/registration"
+        android:name="com.embehome.embehome.Fragments.Registration"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+
+        <action
+            android:id="@+id/action_registration_to_OTPVerification"
+            app:destination="@id/OTPVerification" >
+
+        </action>
+        <action
+            android:id="@+id/action_registration_to_webViewDisplay2"
+            app:destination="@id/webViewDisplay2" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/OTPVerification"
+        android:name="com.embehome.embehome.Fragments.OTPVerification"
+        android:label="OTPVerification" >
+        <action
+            android:id="@+id/action_OTPVerification_to_home2"
+            app:destination="@id/home2" />
+        <argument
+            android:name="email"
+            app:argType="string"
+            android:defaultValue="nil" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/splash"
+        android:name="com.embehome.embehome.Fragments.Splash"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splash_to_login2"
+            app:destination="@id/login2"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splash_to_home2"
+            app:destination="@id/home2" />
+        <action
+            android:id="@+id/action_splash_to_createArea2"
+            app:destination="@id/createArea2" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/chartsDisplay"
+        android:name="com.embehome.embehome.Fragments.ChartsDisplay"
+        android:label="ChartsDisplay" />
+    <activity
+        android:id="@+id/home2"
+        android:name="com.embehome.embehome.Activity.Home"
+        android:label="activity_home"
+        tools:layout="@layout/activity_home" />
+    <fragment
+        android:id="@+id/webViewDisplay2"
+        android:name="com.embehome.embehome.Fragments.WebViewDisplay"
+        android:label="fragment_web_view_display"
+        tools:layout="@layout/fragment_web_view_display">
+        <argument
+            android:name="url"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPassword"
+        android:name="com.embehome.embehome.Fragments.ForgotPassword"
+        android:label="fragment_forgot_password"
+        tools:layout="@layout/fragment_forgot_password" />
+    <fragment
+        android:id="@+id/createArea2"
+        android:name="com.embehome.embehome.Fragments.CreateArea"
+        android:label="CreateArea" >
+        <argument
+            android:name="type"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="action"
+            app:argType="string"
+            android:defaultValue="nil" />
+    </fragment>
+
+</navigation>

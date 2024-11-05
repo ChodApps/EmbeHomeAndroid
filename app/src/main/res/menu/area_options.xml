@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/power"
+        android:title="Area power usage"/>
+    <item android:id="@+id/devicePower"
+        android:title="Device power usage"/>
+    <item
+        android:id="@+id/irb_menu_edit"
+        android:title="Edit device" />
+    <item
+        android:id="@+id/irb_menu_delete"
+        android:title="Delete device" />
+
+
+</menu>

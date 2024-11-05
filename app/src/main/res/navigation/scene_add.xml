@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scene_add"
+    app:startDestination="@id/sceneDetail">
+
+    <fragment
+        android:id="@+id/sceneDetail"
+        android:name="com.embehome.embehome.Fragments.SceneDetail"
+        android:label="fragment_scene_detail"
+        tools:layout="@layout/fragment_scene_detail" >
+        <action
+            android:id="@+id/action_sceneDetail_to_sceneSelectBoards"
+            app:destination="@id/sceneSelectBoards" />
+        <argument
+            android:name="sceneId"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_sceneDetail_to_sceneRemoteIntegration"
+            app:destination="@id/sceneRemoteIntegration" />
+        <action
+            android:id="@+id/action_sceneDetail_to_selectSubScene"
+            app:destination="@id/selectSubScene" />
+        <action
+            android:id="@+id/action_sceneDetail_to_createArea3"
+            app:destination="@id/createArea3" />
+    </fragment>
+    <fragment
+        android:id="@+id/sceneSelectBoards"
+        android:name="com.embehome.embehome.Fragments.SceneSelectBoards"
+        android:label="fragment_scene_select_boards"
+        tools:layout="@layout/fragment_scene_select_boards" >
+        <action
+            android:id="@+id/action_sceneSelectBoards_to_sceneSelectSwitchs"
+            app:destination="@id/sceneSelectSwitchs" />
+        <argument
+            android:name="sceneItemName"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="sceneId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+    <fragment
+        android:id="@+id/sceneSelectSwitchs"
+        android:name="com.embehome.embehome.Fragments.SceneSelectSwitches"
+        android:label="fragment_scene_select_switchs"
+        tools:layout="@layout/fragment_scene_select_switchs" >
+        <argument
+            android:name="macID"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="thingsIDs"
+            app:argType="integer[]" />
+        <argument
+            android:name="sceneItem"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="sceneId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+    <fragment
+        android:id="@+id/sceneRemoteIntegration"
+        android:name="com.embehome.embehome.scene.fragment.SceneRemoteIntegration"
+        android:label="SceneRemoteIntegration" />
+    <fragment
+        android:id="@+id/selectSubScene"
+        android:name="com.embehome.embehome.scene.fragment.SelectSubScene"
+        android:label="SelectSubScene" />
+    <fragment
+        android:id="@+id/createArea3"
+        android:name="com.embehome.embehome.Fragments.CreateArea"
+        android:label="CreateArea" >
+        <argument
+            android:name="type"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="action"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+</navigation>

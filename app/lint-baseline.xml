@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 7.3.1" type="baseline" client="gradle" dependencies="false" name="AGP (7.3.1)" variant="fatal" version="7.3.1">
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Expected non-nullable value"
+        errorLine1="                    areaImage.value = b"
+        errorLine2="                                      ~">
+        <location
+            file="src/main/java/com/embehome/embehome/viewModel/CreateAreaViewModel.kt"
+            line="409"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Cannot set non-nullable LiveData value to `null`"
+        errorLine1="        regEmail.value = null"
+        errorLine2="                         ~~~~">
+        <location
+            file="src/main/java/com/embehome/embehome/viewModel/RegistrationViewModel.kt"
+            line="76"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Cannot set non-nullable LiveData value to `null`"
+        errorLine1="        regCnfPassword.value = null"
+        errorLine2="                               ~~~~">
+        <location
+            file="src/main/java/com/embehome/embehome/viewModel/RegistrationViewModel.kt"
+            line="77"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Cannot set non-nullable LiveData value to `null`"
+        errorLine1="        regPassword.value = null"
+        errorLine2="                            ~~~~">
+        <location
+            file="src/main/java/com/embehome/embehome/viewModel/RegistrationViewModel.kt"
+            line="78"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Cannot set non-nullable LiveData value to `null`"
+        errorLine1="        regMobile.value = null"
+        errorLine2="                          ~~~~">
+        <location
+            file="src/main/java/com/embehome/embehome/viewModel/RegistrationViewModel.kt"
+            line="79"
+            column="27"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Cannot set non-nullable LiveData value to `null`"
+        errorLine1="        regTermsAndCond.value = null"
+        errorLine2="                                ~~~~">
+        <location
+            file="src/main/java/com/embehome/embehome/viewModel/RegistrationViewModel.kt"
+            line="80"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Cannot set non-nullable LiveData value to `null`"
+        errorLine1="                    bid.value = null"
+        errorLine2="                                ~~~~">
+        <location
+            file="src/main/java/com/embehome/embehome/rules/adapter/RuleConditionSwitchAdapter.kt"
+            line="120"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Cannot set non-nullable LiveData value to `null`"
+        errorLine1="                    sid.value = null"
+        errorLine2="                                ~~~~">
+        <location
+            file="src/main/java/com/embehome/embehome/rules/adapter/RuleConditionSwitchAdapter.kt"
+            line="121"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Cannot set non-nullable LiveData value to `null`"
+        errorLine1="                    ss.value = null"
+        errorLine2="                               ~~~~">
+        <location
+            file="src/main/java/com/embehome/embehome/rules/adapter/RuleConditionSwitchAdapter.kt"
+            line="122"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Cannot set non-nullable LiveData value to `null`"
+        errorLine1="                    ssno.value = null"
+        errorLine2="                                 ~~~~">
+        <location
+            file="src/main/java/com/embehome/embehome/rules/adapter/RuleConditionSwitchAdapter.kt"
+            line="123"
+            column="34"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Cannot set non-nullable LiveData value to `null`"
+        errorLine1="                ruleAction.value = null"
+        errorLine2="                                   ~~~~">
+        <location
+            file="src/main/java/com/embehome/embehome/rules/viewModels/RuleTypeSelectionViewModel.kt"
+            line="337"
+            column="36"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Cannot set non-nullable LiveData value to `null`"
+        errorLine1="        ruleAction.value =  null"
+        errorLine2="                            ~~~~">
+        <location
+            file="src/main/java/com/embehome/embehome/rules/viewModels/RuleTypeSelectionViewModel.kt"
+            line="344"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Expected non-nullable value"
+        errorLine1="            scene.value = t"
+        errorLine2="                          ~">
+        <location
+            file="src/main/java/com/embehome/embehome/scene/viewModel/SceneViewModel.kt"
+            line="37"
+            column="27"/>
+    </issue>
+
+</issues>

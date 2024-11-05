@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.embehome.embehome.irb.viewmodel.RemoteCmnViewModel" />
+        <variable
+            name="tvEnum"
+            type="com.embehome.embehome.irb.RemoteButtons" />
+        <variable
+            name="v"
+            type="android.view.View" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".irb.fragment.RemoteAirPurifier">
+
+    <ImageView
+        android:id="@+id/imageView127"
+        android:layout_width="@dimen/app_icon_wh"
+        android:layout_height="@dimen/app_icon_wh"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:padding="@dimen/app_icon_padding"
+        android:onClick="@{() -> viewModel.back()}"
+        android:src="@drawable/tt_cmn_enable_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView139"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/nunito_sans"
+        android:text="IR Blaster"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView127"
+        app:layout_constraintEnd_toStartOf="@+id/imageView213"
+        app:layout_constraintTop_toTopOf="@+id/imageView127" />
+
+    <TextView
+        android:id="@+id/textView140"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_sans"
+        android:text="Air Purifier"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView139"
+        app:layout_constraintTop_toBottomOf="@+id/textView139" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView129"
+            android:layout_width="@dimen/full_remote_large_btn_width"
+            android:layout_height="@dimen/full_remote_large_btn_height"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_POWER)}"
+            android:src="@drawable/irb_air_purifier_button_power"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView130"
+            android:layout_width="@dimen/full_remote_med_btn_width"
+            android:layout_height="@dimen/full_remote_med_btn_height"
+            android:layout_marginStart="8dp"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_AUTO)}"
+            android:src="@drawable/irb_air_purifier_button_auto"
+            app:layout_constraintBottom_toTopOf="@+id/imageView131"
+            app:layout_constraintEnd_toStartOf="@+id/imageView129"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imageView131"
+            app:layout_constraintTop_toTopOf="@+id/imageView129" />
+
+        <ImageView
+            android:id="@+id/imageView131"
+            android:layout_width="@dimen/full_remote_med_btn_width"
+            android:layout_height="@dimen/full_remote_med_btn_height"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_FAN_LOW)}"
+            android:src="@drawable/irb_air_purifier_button_l1"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView133"
+            app:layout_constraintEnd_toStartOf="@+id/imageView133"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView133" />
+
+        <ImageView
+            android:id="@+id/imageView132"
+            android:layout_width="@dimen/full_remote_med_btn_width"
+            android:layout_height="@dimen/full_remote_med_btn_height"
+            android:src="@drawable/irb_air_purifier_button_clean"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_CLEAN)}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView138"
+            app:layout_constraintEnd_toStartOf="@+id/imageView138"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView138" />
+
+        <ImageView
+            android:id="@+id/imageView133"
+            android:layout_width="@dimen/full_remote_med_btn_width"
+            android:layout_height="@dimen/full_remote_med_btn_height"
+            android:layout_marginTop="24dp"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_FAN_MEDIUM)}"
+            android:src="@drawable/irb_air_purifier_button_l2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView129" />
+
+        <ImageView
+            android:id="@+id/imageView134"
+            android:layout_width="@dimen/full_remote_med_btn_width"
+            android:layout_height="@dimen/full_remote_med_btn_height"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_FAN_HIGH)}"
+            android:src="@drawable/irb_air_purifier_button_l3"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView133"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView133"
+            app:layout_constraintTop_toTopOf="@+id/imageView133" />
+
+        <ImageView
+            android:id="@+id/imageView135"
+            android:layout_width="@dimen/full_remote_med_btn_width"
+            android:layout_height="@dimen/full_remote_med_btn_height"
+            android:src="@drawable/irb_air_purifier_button_down"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_DOWN)}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView137"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView137"
+            app:layout_constraintTop_toTopOf="@+id/imageView137" />
+
+        <ImageView
+            android:id="@+id/imageView136"
+            android:layout_width="@dimen/full_remote_med_btn_width"
+            android:layout_height="@dimen/full_remote_med_btn_height"
+            android:src="@drawable/irb_air_purifier_button_up"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_UP)}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView137"
+            app:layout_constraintEnd_toStartOf="@+id/imageView137"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView137" />
+
+        <ImageView
+            android:id="@+id/imageView137"
+            android:layout_width="@dimen/full_remote_med_btn_width"
+            android:layout_height="@dimen/full_remote_med_btn_height"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/irb_air_purifier_button_timer"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_TIMER)}"
+            app:layout_constraintEnd_toEndOf="@+id/imageView133"
+            app:layout_constraintStart_toStartOf="@+id/imageView133"
+            app:layout_constraintTop_toBottomOf="@+id/imageView133" />
+
+        <ImageView
+            android:id="@+id/imageView138"
+            android:layout_width="@dimen/full_remote_med_btn_width"
+            android:layout_height="@dimen/full_remote_med_btn_height"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_LOW)}"
+            android:src="@drawable/irb_air_purifier_button_dlow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView137"
+            app:layout_constraintStart_toStartOf="@+id/imageView137"
+            app:layout_constraintTop_toBottomOf="@+id/imageView137" />
+
+        <ImageView
+            android:id="@+id/imageView139"
+            android:layout_width="@dimen/full_remote_med_btn_width"
+            android:layout_height="@dimen/full_remote_med_btn_height"
+            android:src="@drawable/irb_air_purifier_button_sleep"
+            android:onClick="@{() -> viewModel.action(tvEnum.KEY_SLEEP)}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView138"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView138"
+            app:layout_constraintTop_toTopOf="@+id/imageView138" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/button32"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/save_remote"
+        android:onClick="@{() -> viewModel.saveRemote()}"
+        android:visibility="@{viewModel.editMode}"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView127"
+        app:layout_constraintEnd_toStartOf="@+id/textView139"
+        app:layout_constraintStart_toEndOf="@+id/imageView127"
+        app:layout_constraintTop_toTopOf="@+id/imageView127" />
+
+    <ImageView
+        android:id="@+id/imageView213"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:padding="12dp"
+        android:background="?attr/selectableItemBackground"
+        android:visibility="@{viewModel.editMode == v.VISIBLE ? v.GONE : v.VISIBLE}"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView127"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView127"
+        app:srcCompat="@drawable/ic_baseline_more_vert_24" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

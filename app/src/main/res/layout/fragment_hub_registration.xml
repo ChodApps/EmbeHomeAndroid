@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.embehome.embehome.viewModel.HubRegistrationViewModel" />
+    </data>
+
+
+    <ScrollView
+        tools:context=".Fragments.HubRegistration"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/hub_reg_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="@string/title_hub_registration"
+                style="@style/Title"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/hub_reg_wifi_ssid_layout"
+                style="@style/RoundedTextInputLayout"
+                app:hintEnabled="false"
+                android:layout_width="@dimen/null_space_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_large_32dp"
+                android:layout_marginTop="@dimen/space_xxxl_128dp"
+                android:layout_marginEnd="@dimen/space_large_32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hub_reg_title">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/hub_reg_wifi_ssid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusableInTouchMode="false"
+                    style="@style/textField"
+                    android:background="@drawable/rounded_white_bg_with_border"
+                    android:text="@{viewModel.wifiSSID}"
+                    android:hint="@string/hint_wifi_ssid" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/hub_reg_wifi_pwd_layout"
+                style="@style/RoundedTextInputLayout"
+                app:hintEnabled="false"
+                android:layout_width="@dimen/null_space_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_large_32dp"
+                android:layout_marginTop="@dimen/space_small_8dp"
+                android:layout_marginEnd="@dimen/space_large_32dp"
+                app:errorIconDrawable="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hub_reg_wifi_ssid_layout"
+                app:errorEnabled="@{viewModel.errorWifiPassword}"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/hub_reg_wifi_paswd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/textField"
+                    android:background="@drawable/rounded_white_bg_with_border"
+                    android:hint="@string/hint_password"
+                    android:text="@={viewModel.wifiPassword}"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/hub_reg_config"
+                android:layout_width="@dimen/null_space_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_xl_64dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginEnd="@dimen/space_xl_64dp"
+                android:layout_marginBottom="64dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hub_reg_wifi_pwd_layout">
+
+                <ImageView
+                    android:id="@+id/hub_reg_config_icon"
+                    android:layout_width="@android:dimen/notification_large_icon_width"
+                    android:layout_height="@android:dimen/notification_large_icon_height"
+                    android:layout_gravity="center"
+                    android:onClick="@{() -> viewModel.submit()}"
+                    android:tint="@{viewModel.isPasswordValid ? @color/colorAccent : @android:color/black}"
+                    app:srcCompat="@drawable/configure" />
+
+                <TextView
+                    android:id="@+id/hub_reg_config_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_small_5dp"
+                    android:fontFamily="@font/nunito_sans_extrabold"
+                    android:gravity="center"
+                    android:text="Configure Hub"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@{viewModel.isPasswordValid ? @color/colorAccent : @android:color/black}" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="@dimen/app_icon_wh"
+                android:layout_height="@dimen/app_icon_wh"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:onClick="@{() -> viewModel.hubRegBack()}"
+                android:padding="@dimen/app_icon_padding"
+                android:src="@drawable/tt_cmn_enable_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView215"
+                style="@style/MainLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_large_10dp"
+                android:text="Click here for Instruction"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hub_reg_config" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

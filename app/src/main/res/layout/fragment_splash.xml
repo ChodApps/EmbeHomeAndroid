@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+   android:background="@drawable/splash_embe"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.Splash">
+
+    <ImageView
+        android:id="@+id/centerImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400dp"
+        android:src="@drawable/embelogo256" />
+
+
+
+    <ImageView
+        android:id="@+id/bottomMade"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+       android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/madeindia1" />
+
+   <!--
+       <ImageView
+           android:id="@+id/caption"
+           android:layout_alignParentBottom="true"
+           android:layout_alignParentLeft="true"
+           android:layout_alignParentRight="true"
+           android:layout_width="74dp"
+           android:layout_height="74dp"
+           android:src="@drawable/madeindia1" />-->
+
+</RelativeLayout>

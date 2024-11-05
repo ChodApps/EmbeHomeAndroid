@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/remote_add"
+    app:startDestination="@id/remoteCategory">
+
+    <fragment
+        android:id="@+id/remoteCategory"
+        android:name="com.embehome.embehome.irb.fragment.RemoteCategory"
+        android:label="fragment_remote_category"
+        tools:layout="@layout/fragment_remote_category" >
+        <action
+            android:id="@+id/action_remoteCategory_to_remoteTV2"
+            app:destination="@id/remoteTV2" />
+        <action
+            android:id="@+id/action_remoteCategory_to_remoteAC"
+            app:destination="@id/remoteAC" />
+        <action
+            android:id="@+id/action_remoteCategory_to_remoteAudioSystem"
+            app:destination="@id/remoteAudioSystem" />
+        <action
+            android:id="@+id/action_remoteCategory_to_remoteProjector"
+            app:destination="@id/remoteProjector" />
+        <action
+            android:id="@+id/action_remoteCategory_to_remoteSetupBox"
+            app:destination="@id/remoteSetupBox" />
+        <action
+            android:id="@+id/action_remoteCategory_to_remoteDVDPlayer"
+            app:destination="@id/remoteDVDPlayer" />
+        <action
+            android:id="@+id/action_remoteCategory_to_remoteTableFan"
+            app:destination="@id/remoteTableFan" />
+        <action
+            android:id="@+id/action_remoteCategory_to_remoteCeilingFan"
+            app:destination="@id/remoteCeilingFan" />
+        <action
+            android:id="@+id/action_remoteCategory_to_remoteCooler"
+            app:destination="@id/remoteCooler" />
+        <action
+            android:id="@+id/action_remoteCategory_to_remoteGeyser"
+            app:destination="@id/remoteGeyser" />
+        <action
+            android:id="@+id/action_remoteCategory_to_remoteAirPurifier"
+            app:destination="@id/remoteAirPurifier" />
+        <action
+            android:id="@+id/action_remoteCategory_to_remoteOven"
+            app:destination="@id/remoteOven" />
+        <action
+            android:id="@+id/action_remoteCategory_to_IRRemote"
+            app:destination="@id/IRRemote" />
+    </fragment>
+    <fragment
+        android:id="@+id/remoteTV2"
+        android:name="com.embehome.embehome.irb.fragment.RemoteTV"
+        android:label="RemoteTV" >
+        <argument
+            android:name="macID"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="thingsID"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="remoteName"
+            app:argType="string"
+            android:defaultValue="New Remote" />
+        <argument
+            android:name="serialNumber"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="operationType"
+            app:argType="string"
+            android:defaultValue="Create" />
+        <argument
+            android:name="remoteID"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/remoteAC"
+        android:name="com.embehome.embehome.irb.fragment.RemoteAC"
+        android:label="RemoteAC" >
+        <argument
+            android:name="macID"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="thingsID"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="remoteName"
+            app:argType="string"
+            android:defaultValue="New Remote" />
+        <argument
+            android:name="serialNumber"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="operationType"
+            app:argType="string"
+            android:defaultValue="Create" />
+        <argument
+            android:name="remoteID"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/remoteAudioSystem"
+        android:name="com.embehome.embehome.irb.fragment.RemoteAudioSystem"
+        android:label="RemoteAudioSystem" >
+        <argument
+            android:name="macID"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="thingsID"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="remoteName"
+            app:argType="string"
+            android:defaultValue="New Remote" />
+        <argument
+            android:name="serialNumber"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="operationType"
+            app:argType="string"
+            android:defaultValue="Create" />
+        <argument
+            android:name="remoteID"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/remoteProjector"
+        android:name="com.embehome.embehome.irb.fragment.RemoteProjector"
+        android:label="fragment_remote_projector"
+        tools:layout="@layout/fragment_remote_projector" >
+        <argument
+            android:name="macID"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="thingsID"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="remoteName"
+            app:argType="string"
+            android:defaultValue="New Remote" />
+        <argument
+            android:name="serialNumber"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="operationType"
+            app:argType="string"
+            android:defaultValue="Create" />
+        <argument
+            android:name="remoteID"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/remoteSetupBox"
+        android:name="com.embehome.embehome.irb.fragment.RemoteSetupBox"
+        android:label="remote_setup_box_fragment"
+        tools:layout="@layout/remote_setup_box_fragment" >
+        <argument
+            android:name="macID"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="thingsID"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="remoteName"
+            app:argType="string"
+            android:defaultValue="New Remote" />
+        <argument
+            android:name="serialNumber"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="operationType"
+            app:argType="string"
+            android:defaultValue="Create" />
+        <argument
+            android:name="remoteID"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/remoteDVDPlayer"
+        android:name="com.embehome.embehome.irb.fragment.RemoteDVDPlayer"
+        android:label="remote_d_v_d_player_fragment"
+        tools:layout="@layout/remote_d_v_d_player_fragment" >
+        <argument
+            android:name="macID"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="thingsID"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="remoteName"
+            app:argType="string"
+            android:defaultValue="New Remote" />
+        <argument
+            android:name="serialNumber"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="operationType"
+            app:argType="string"
+            android:defaultValue="Create" />
+        <argument
+            android:name="remoteID"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/remoteTableFan"
+        android:name="com.embehome.embehome.irb.fragment.RemoteTableFan"
+        android:label="remote_table_fan_fragment"
+        tools:layout="@layout/remote_table_fan_fragment" >
+        <argument
+            android:name="macID"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="thingsID"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="remoteName"
+            app:argType="string"
+            android:defaultValue="New Remote" />
+        <argument
+            android:name="serialNumber"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="operationType"
+            app:argType="string"
+            android:defaultValue="Create" />
+        <argument
+            android:name="remoteID"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/remoteCeilingFan"
+        android:name="com.embehome.embehome.irb.fragment.RemoteCeilingFan"
+        android:label="remote_ceiling_fan_fragment"
+        tools:layout="@layout/remote_ceiling_fan_fragment" >
+        <argument
+            android:name="macID"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="thingsID"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="remoteName"
+            app:argType="string"
+            android:defaultValue="New Remote" />
+        <argument
+            android:name="serialNumber"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="operationType"
+            app:argType="string"
+            android:defaultValue="Create" />
+        <argument
+            android:name="remoteID"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/remoteCooler"
+        android:name="com.embehome.embehome.irb.fragment.RemoteCooler"
+        android:label="remote_cooler_fragment"
+        tools:layout="@layout/remote_cooler_fragment" >
+        <argument
+            android:name="macID"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="thingsID"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="remoteName"
+            app:argType="string"
+            android:defaultValue="New Remote" />
+        <argument
+            android:name="serialNumber"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="operationType"
+            app:argType="string"
+            android:defaultValue="Create" />
+        <argument
+            android:name="remoteID"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/remoteGeyser"
+        android:name="com.embehome.embehome.irb.fragment.RemoteGeyser"
+        android:label="remote_geyser_fragment"
+        tools:layout="@layout/remote_geyser_fragment" >
+        <argument
+            android:name="macID"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="thingsID"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="remoteName"
+            app:argType="string"
+            android:defaultValue="New Remote" />
+        <argument
+            android:name="serialNumber"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="operationType"
+            app:argType="string"
+            android:defaultValue="Create" />
+        <argument
+            android:name="remoteID"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/remoteAirPurifier"
+        android:name="com.embehome.embehome.irb.fragment.RemoteAirPurifier"
+        android:label="RemoteAirPurifier" >
+        <argument
+            android:name="macID"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="thingsID"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="remoteName"
+            app:argType="string"
+            android:defaultValue="New Remote" />
+        <argument
+            android:name="serialNumber"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="operationType"
+            app:argType="string"
+            android:defaultValue="Create" />
+        <argument
+            android:name="remoteID"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/remoteOven"
+        android:name="com.embehome.embehome.irb.fragment.RemoteOven"
+        android:label="remote_oven_fragment"
+        tools:layout="@layout/remote_oven_fragment" >
+        <argument
+            android:name="macID"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="thingsID"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="remoteName"
+            app:argType="string"
+            android:defaultValue="New Remote" />
+        <argument
+            android:name="serialNumber"
+            app:argType="string"
+            android:defaultValue="nil" />
+        <argument
+            android:name="operationType"
+            app:argType="string"
+            android:defaultValue="Create" />
+        <argument
+            android:name="remoteID"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/IRRemote"
+        android:name="com.embehome.embehome.irb.fragment.IRRemote"
+        android:label="IRRemote" />
+</navigation>

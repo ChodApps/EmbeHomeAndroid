@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="colorPrimary">#2f2f2f</color>
+    <color name="colorPrimaryDark">#2f2f2f</color>
+    <color name="colorAccent">#FF5722</color>
+    <color name="colorError">#ff0000</color>
+    <color name="loginBtn">#B2FFFFFF</color>
+    <color name="loadBackground">#803C3C3C</color>
+    <color name="highlightBlack">#BEE1E0E0</color>
+    <color name="cardBackgroundCircle">#E1E0E0</color>
+    <color name="thinLayerOverImage">#00E1E0E0</color>
+    <color name="onSurface">#7D7D7D</color>
+    <color name="roundBtn">#E1E0E0</color>
+    <color name="sidebar_normal">#ff33ccff</color>
+    <color name="selectImageHighlight">#A6F15A22</color>
+    <color name="twoWayShade">#73F46C39</color>
+    <color name="link">#006AC6</color>
+    <color name="imageDisable">#7D7D7D</color>
+    <color name="optionInactive">#C8C8C8</color>
+
+    <color name="primaryText">#212121</color>
+    <color name="secondaryText">#757575</color>
+    <color name="text">#fabe06</color>
+    <color name="lightPrimaryColor">#C5CAE9</color>
+    <color name="bckground">#2f2f2f</color>
+    <color name="iconColor">#f7b253</color>
+    <color name="bottomTextColorNonActive">#f7b253</color>
+    <color name="blueSelected">#036cb7</color>
+
+    <color name="purple_200">#FFE7E6EB</color>
+    <color name="black1">#FF000000</color>
+    <color name="white1">#FFFFFFFF</color>
+    <color name="mainbg">#F7F7F7</color>
+    <color name="title_color">#1F1F1F</color>
+    <color name="forgot_passward_color">#050F2B</color>
+    <color name="login_btn_bg">#108B8B</color>
+
+</resources>

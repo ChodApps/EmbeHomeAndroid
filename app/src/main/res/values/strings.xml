@@ -1,0 +1,84 @@
+<resources>
+
+    <!--Application Display Name on mobile phone-->
+    <string name="app_name">EmbeHome</string>
+    <string name="app_description"> EmbeHome brings artificial intelligence (AI) and the power of the Internet of Things (IoT) to transform your living spaces and homes with our wide range of smart IoT devices and switchboards that work seamlessly and wirelessly, to bring you the ultimate convenience and smart experience. We design robust smart devices for India and have a customer centric focus on after sales and support across major cities.</string>
+
+
+    <string name="email">Email</string>
+    <string name="save">Save</string>
+    <string name="cancel_">Cancel</string>
+
+    <string name="login">LOGIN</string>
+    <string name="forgot"><u>Forgot Password?</u></string>
+    <string name="hint_user_name">User Name</string>
+    <string name="hint_password">Password</string>
+    <string name="go">GO !</string>
+    <string name="login_register">Create Account</string>
+
+    <string name="resend_otp_time">Resend OTP in %1$d seconds</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_hub_registration">HUB REGISTRATION</string>
+    <string name="hint_wifi_ssid">Wifi SSID</string>
+    <string name="register_hint">Don\'t have an account?</string>
+    <string name="otp_title">VERIFICATION</string>
+    <string name="verify">Verify</string>
+    <string name="logo">Logo</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="registration">CREATE ACCOUNT</string>
+    <string name="terms_and_condition"><u>I Agree to all Terms and Conditions*</u></string>
+    <string name="hub_msg_give_name">Give a name to this HUB</string>
+    <string name="hub_success">Hub Found Successfully!</string>
+    <string name="add_group">Add Group</string>
+    <string name="add_bulb">Add Bulb</string>
+    <string name="default_notification_channel_id">push_notification_channel_id</string>
+    <string name="save_remote">Save Remote</string>
+
+
+    <!--    Hub Configuration-->
+    <string name="choose_icon">Choose icon for hub - </string>
+    <string name="hub_image">Hub Image - </string>
+    <string name="change_image">Change Image</string>
+    <string name="enter_hub_name">Enter Hub Name</string>
+    <string name="otp_email_message">We have sent an OTP to email id</string>
+    <string name="channel_name">Switch status</string>
+    <string name="channel_description">Switch operation details</string>
+    <string name="instruction_device_ssb">
+        For SSB: \n
+        1. Keeping all switches in off state\n
+        2. Press switch1, 4 times\n
+        3. When the LED starts blinking, click on \'Add\' in the application within 8 seconds\n
+        4. After add is successful, LED pattern will glow on the switch board\n\n
+        For RSB:\n
+        Press buttons in the below pattern\n
+        1. SW1 ON &amp; OFF 3 times\n
+        2. SW2 ON &amp; OFF 3 times\n
+        3. SW1 ON &amp; OFF 3 times\n
+        4. When the beep sound starts click on \'Add\' within 8 seconds.\n\n
+        For IRB:\n
+        1. Press the reset button for 2 secs\n
+        2. When 4th LED stable click on \'Add\'\n\n
+        For Curtain:\n
+        1. Press switch 1, 4 times\n
+        2. When the LED starts blinking, click on \'Add\' within 8 seconds
+    </string>
+    <string name="hub_add_instructions">Put the Hub to configuration mode by pressing the reset button for 4 seconds only. Once the light starts blinking click on Next</string>
+    <string name="hub_add_instruction_warning">[Warning : Do not press the reset button for more than 6 seconds]</string>
+    <string name="hub_add_instruction_note_1">The WIFI network should be close to your hub and mobile phone.</string>
+    <string name="hub_add_instruction_note_2">Please ensure that the WIFI network is a 2.4Ghz WIFI network (not 5Ghz)</string>
+    <string name="ac_temp_display">%1$s ℃</string>
+    <string name="vertical_swing">Swing V - %1$s</string>
+    <string name="swing_horizontal">Swing H - %1$s</string>
+    <string name="downloading_update">Downloading update %1$d%%</string>
+    <string name="installing_progress">Installing Progress %1$d%%</string>
+    <string name="multiple_hub_during_onboard">There is multiple unregistered hubs in your network please turn off other hubs which you do not want to register.</string>
+    <string name="tryDemo">Would you like to Try ?</string>
+    <string name="clickhere">Demo</string>
+    <string name="home">Home</string>
+
+    <string name="login_txt">Login</string>
+    <string name="signup_text">Sign up</string><!--login_register-->
+
+</resources>

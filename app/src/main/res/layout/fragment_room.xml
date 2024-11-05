@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.embehome.embehome.viewModel.RoomFragViewModel" />
+    </data>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".Fragments.RoomFragment">
+
+
+            <LinearLayout
+                android:id="@+id/room_area_container"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/textView11"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/list_boards"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/space_small_8dp"
+                    android:paddingEnd="@dimen/space_small_8dp"
+                    android:visibility="@{viewModel.listView}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/_area_list" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/grid_boards"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="@{viewModel.gridView}"
+                    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                    app:spanCount="2"
+                    tools:listitem="@layout/_area_grid" />
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="@dimen/app_icon_wh"
+                android:layout_height="@dimen/app_icon_wh"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:onClick="@{() -> viewModel.roomFragmentBack()}"
+                android:padding="@dimen/app_icon_padding"
+                android:tint="@color/colorAccent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/tt_cmn_enable_home" />
+
+            <TextView
+                android:id="@+id/room_separator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.8" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/nunito_sans"
+                android:text="Areas"
+                android:textColor="#000000"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_scene_room"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/room_area_container"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/room_separator"
+                tools:listitem="@layout/_scene_room_frag" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/nunito_sans"
+                android:text="Scenes"
+                android:textColor="#FF5722"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/room_separator"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/grid_to_list_toggle"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:onClick="@{() -> viewModel.toggleAreaViewType()}"
+                android:padding="@dimen/app_icon_padding"
+                app:layout_constraintBottom_toBottomOf="@+id/textView10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView10"
+                app:srcCompat="@drawable/tt_cmn_enable_menu"
+                app:tint="@color/colorAccent" />
+
+
+            <ImageView
+                android:id="@+id/imageView15"
+                android:layout_width="@dimen/app_icon_wh"
+                android:layout_height="@dimen/app_icon_wh"
+                android:layout_marginEnd="8dp"
+                android:onClick="@{() -> viewModel.displayHubStatus()}"
+                android:padding="@dimen/app_icon_padding"
+                android:visibility="invisible"
+                android:tint="@{viewModel.hubInLan ? @color/colorAccent : @android:color/black}"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView8"
+                app:srcCompat="@drawable/tt_net_enable_hub" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:visibility="gone"
+                app:backgroundTint="@color/colorAccent"
+                app:fabSize="mini"
+                app:layout_constraintBottom_toBottomOf="@+id/room_area_container"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/tt_cmn_disable_plus" />
+
+            <TextView
+                android:id="@+id/textView229"
+                style="@style/Title"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:text="DEVICES"
+                android:textColor="#f7b253"
+                android:textAlignment="center"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView241"
+                android:layout_width="180dp"
+                android:layout_height="30dp"
+                android:text="@{viewModel.noSceneMessage}"
+                style="@style/SubHeading"
+
+                tools:text="Scenes not found"
+                android:gravity="center"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/room_separator" />
+
+            <ImageView
+                android:id="@+id/imageView275"
+                android:layout_width="@dimen/app_icon_wh"
+                android:layout_height="@dimen/app_icon_wh"
+                android:layout_marginStart="8dp"
+                android:padding="@dimen/app_icon_padding"
+                app:layout_constraintBottom_toBottomOf="@+id/textView10"
+                app:layout_constraintStart_toEndOf="@+id/textView10"
+                app:layout_constraintTop_toTopOf="@+id/textView10"
+                app:srcCompat="@drawable/tt_cmn_enable_plus" />
+
+            <!--            <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--                android:id="@+id/floatingActionButton"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:layout_marginBottom="8dp"-->
+<!--                android:backgroundTint="@color/colorAccent"-->
+<!--                android:clickable="true"-->
+<!--                android:focusable="true"-->
+<!--                android:onClick="@{() -> viewModel.addBoard()}"-->
+<!--                android:visibility="gone"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:srcCompat="@drawable/plus_sign_64px"-->
+<!--                app:tint="@color/highlightBlack" />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+</layout>

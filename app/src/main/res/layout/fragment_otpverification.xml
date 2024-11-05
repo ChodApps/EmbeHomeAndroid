@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.embehome.embehome.viewModel.OTPVerificationViewModel" />
+
+        <variable
+            name="view"
+            type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Fragments.OTPVerification"
+        >
+
+        <ImageView
+            android:id="@+id/otp_back"
+            android:layout_width="@dimen/app_icon_wh"
+            android:layout_height="@dimen/app_icon_wh"
+            android:layout_marginStart="@dimen/space_med_16dp"
+            android:layout_marginTop="@dimen/space_med_16dp"
+            android:contentDescription="back"
+            android:padding="@dimen/app_icon_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/tt_cmn_enable_back" />
+
+        <TextView
+            android:id="@+id/otp_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/padding_xxl_24dp"
+            android:text="@string/otp_title"
+            style="@style/Title"
+            app:layout_constraintBottom_toBottomOf="@+id/otp_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/otp_back" />
+
+        <TextView
+            android:id="@+id/otp_hint"
+            style="@style/Heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="@string/enter_otp"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/textView186" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_large_10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/otp_hint">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/otp_field_1_layout"
+                android:layout_width="@dimen/otp_width_60dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:nextFocusDown="@id/otp_field_2_layout"
+                android:padding="@dimen/padding_med_8dp"
+                app:boxStrokeColor="@color/colorAccent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/otp_field_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:text="@={viewModel.field_1}"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/otp_field_2_layout"
+                android:layout_width="@dimen/otp_width_60dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_med_8dp"
+                app:boxStrokeColor="@color/colorAccent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/otp_field_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:text="@={viewModel.field_2}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/otp_field_3_layout"
+                android:layout_width="@dimen/otp_width_60dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_med_8dp"
+                app:boxStrokeColor="@color/colorAccent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/otp_field_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:text="@={viewModel.field_3}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/otp_field_4_layout"
+                android:layout_width="@dimen/otp_width_60dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_med_8dp"
+                app:boxStrokeColor="@color/colorAccent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/otp_field_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:inputType="number"
+
+                    android:maxLength="1"
+                    android:text="@={viewModel.field_4}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/otp_verify"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="@dimen/null_space_0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_xxl_80dp"
+            android:layout_marginTop="@dimen/space_xxl_80dp"
+            android:layout_marginEnd="@dimen/space_xxl_80dp"
+            android:background="@color/loginBtn"
+            android:enabled="@{viewModel.btnEnable}"
+            android:text="@string/verify"
+            android:onClick="@{() -> viewModel.submitData()}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/black"
+            app:layout_constraintCircleRadius="@dimen/radius_small_5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:strokeColor="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/textView185"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/otp_email_message"
+            style="@style/SubHeading"
+            app:layout_constraintStart_toStartOf="@+id/otp_back"
+            app:layout_constraintTop_toBottomOf="@+id/otp_back" />
+
+        <TextView
+            android:id="@+id/textView186"
+            style="@style/SubHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{viewModel.email}"
+            app:layout_constraintStart_toStartOf="@+id/textView185"
+            app:layout_constraintTop_toBottomOf="@+id/textView185" />
+
+        <TextView
+            android:id="@+id/textView187"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:visibility="@{viewModel.resend ?view.GONE : view.VISIBLE}"
+            android:text="@{String.format(@string/resend_otp_time, viewModel.time)}"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resend"
+            android:visibility="@{viewModel.resend ? view.VISIBLE : view.GONE}"
+            style="@style/MainLink"
+            android:onClick="@{() -> viewModel.resendOTP()}"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

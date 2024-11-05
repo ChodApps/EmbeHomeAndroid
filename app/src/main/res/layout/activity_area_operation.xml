@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools">
+<data>
+    <variable
+        name="viewModel"
+        type="com.embehome.embehome.viewModel.AreaActivityViewModel" />
+
+    <variable
+        name="view"
+        type="android.view.View" />
+</data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_bg"
+        tools:context=".Activity.AreaOperation">
+
+        <ImageView
+            android:id="@+id/imageView226"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/bedroom_temp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/area_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:padding="10dp"
+            android:maxLength="20"
+            style="@style/Title"
+            android:text="@{viewModel.fragmentTitle}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+            app:layout_constraintEnd_toStartOf="@+id/imageView16"
+            app:layout_constraintStart_toEndOf="@+id/imageView11"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            tools:text="Area Name" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_Area_Switches"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/highlightBlack"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/space_med_16dp"
+            android:paddingRight="@dimen/space_med_16dp"
+            android:visibility="@{viewModel.switchListView}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="@+id/textView13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9"
+            tools:listitem="@layout/_individual_switch" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="@dimen/app_icon_wh"
+            android:layout_height="@dimen/app_icon_wh"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:onClick="@{() -> viewModel.areaFragBack()}"
+            android:padding="@dimen/app_icon_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/tt_cmn_enable_back" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_Area_Boards"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/highlightBlack"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/space_small_8dp"
+            android:paddingRight="@dimen/space_med_16dp"
+            android:paddingBottom="@dimen/padding_med_8dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/textView9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView14"
+            tools:listitem="@layout/_individual_board" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:elevation="0dp"
+            android:visibility="@{viewModel.switchDetailView}"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView13">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/imageView22"
+                    android:layout_width="230dp"
+                    android:layout_height="230dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5"
+                    app:srcCompat="@drawable/fan_regulator_controller_00" />
+
+
+
+                <FrameLayout
+                    android:id="@+id/remoteContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <FrameLayout
+                    android:id="@+id/fanController"
+                    android:layout_width="230dp"
+                    android:layout_height="230dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="32dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_sans_extrabold"
+                    android:padding="@dimen/space_small_8dp"
+
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView38"
+                    android:layout_width="@dimen/mis_48dp"
+                    android:layout_height="@dimen/mis_48dp"
+                    android:layout_marginTop="16dp"
+                    android:onClick="@{() -> viewModel.openSetAlert()}"
+                    android:padding="@dimen/padding_small_5dp"
+                    android:visibility="@{viewModel.showSleepBtn}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/tt_cmn_enable_edit" />
+
+                <ImageView
+                    android:id="@+id/imageView243"
+                    android:layout_width="@dimen/mis_48dp"
+                    android:layout_height="@dimen/mis_48dp"
+                    android:layout_marginTop="16dp"
+                    android:onClick="@{() -> viewModel.openPowerChart()}"
+                    android:padding="@dimen/padding_small_5dp"
+                    android:tint="@color/colorAccent"
+                    android:visibility="@{viewModel.showSleepBtn}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView38"
+                    app:layout_constraintStart_toStartOf="@+id/imageView38"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView38"
+                    app:layout_constraintVertical_bias="0.3"
+                    app:srcCompat="@drawable/tt_power_number_enable" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:textSize="10sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/highlightBlack"
+            android:fontFamily="@font/nunito_sans_black"
+            android:paddingStart="@dimen/space_med_16dp"
+            android:paddingTop="@dimen/padding_small_5dp"
+            android:paddingEnd="@dimen/padding_small_5dp"
+            android:paddingBottom="@dimen/padding_small_5dp"
+            android:text="EmbeHome Devices"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/highlightBlack"
+            android:fontFamily="@font/nunito_sans_black"
+            android:paddingStart="@dimen/space_med_16dp"
+            android:paddingTop="@dimen/padding_small_5dp"
+            android:paddingRight="@dimen/padding_small_5dp"
+            android:paddingBottom="@dimen/padding_small_5dp"
+            android:text="@{viewModel.deviceType}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="14sp"
+            android:visibility="@{viewModel.switchListView}"
+            app:layout_constraintBottom_toTopOf="@+id/list_Area_Switches"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="@dimen/app_icon_wh"
+            android:layout_height="@dimen/app_icon_wh"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:padding="@dimen/app_icon_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_more_vert_24" />
+
+        <Switch
+            android:id="@+id/switch3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:checked="@{viewModel.sleep}"
+            android:fontFamily="@font/nunito_sans"
+            android:onClick="@{() -> viewModel.sleep()}"
+            android:text="Sleep  "
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/list_Area_Switches"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView15" />
+
+        <ImageView
+            android:id="@+id/imageView16"
+            android:layout_width="@dimen/mis_48dp"
+            android:layout_height="@dimen/mis_48dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="@{() -> viewModel.updateArea()}"
+            android:padding="@dimen/padding_large_10dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView13"
+            app:layout_constraintEnd_toStartOf="@+id/imageView13"
+            app:layout_constraintTop_toTopOf="@+id/imageView13"
+            app:srcCompat="@drawable/edit_pencil" />
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="@{() -> viewModel.sleep()}"
+            android:padding="@dimen/padding_large_10dp"
+            android:scaleType="fitXY"
+            android:tint="@{viewModel.sleep ? @color/colorAccent : @android:color/black}"
+            android:visibility="@{viewModel.showSleepBtn}"
+            app:layout_constraintBottom_toTopOf="@+id/list_Area_Switches"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView15"
+            app:srcCompat="@drawable/sleep_button" />
+
+        <FrameLayout
+            android:id="@+id/alertContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/list_Area_Boards" />
+
+        <FrameLayout
+            android:id="@+id/areaSettings"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+
+
+<!--            android:visibility="@{viewModel.isSetting ? view.VISIBLE : view.GONE}"-->
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

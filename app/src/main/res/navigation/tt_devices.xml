@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/tt_devices"
+    app:startDestination="@id/areaFragment2">
+
+    <fragment
+        android:id="@+id/areaFragment2"
+        android:name="com.embehome.embehome.Fragments.AreaFragment"
+        android:label="AreaFragment" >
+        <argument
+            android:name="areaId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="macId"
+            app:argType="string"
+            android:defaultValue="nil" />
+    </fragment>
+</navigation>

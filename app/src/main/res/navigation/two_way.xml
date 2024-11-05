@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/two_way"
+    app:startDestination="@id/twoWayList">
+
+    <fragment
+        android:id="@+id/twoWayList"
+        android:name="com.embehome.embehome.Fragments.TwoWayList"
+        android:label="fragment_two_way_list"
+        tools:layout="@layout/fragment_two_way_list" >
+        <action
+            android:id="@+id/action_twoWayList_to_twoWaySSBSelection"
+            app:destination="@id/twoWaySSBSelection" />
+    </fragment>
+    <fragment
+        android:id="@+id/twoWaySSBSelection"
+        android:name="com.embehome.embehome.Fragments.TwoWaySSBSelection"
+        android:label="fragment_two_way_s_s_b_selection"
+        tools:layout="@layout/fragment_two_way_s_s_b_selection" >
+        <action
+            android:id="@+id/action_twoWaySSBSelection_to_twoWaySwitchSelection"
+            app:destination="@id/twoWaySwitchSelection" />
+    </fragment>
+    <fragment
+        android:id="@+id/twoWaySwitchSelection"
+        android:name="com.embehome.embehome.Fragments.TwoWaySwitchSelection"
+        android:label="fragment_two_way_switch_selection"
+        tools:layout="@layout/fragment_two_way_switch_selection" />
+</navigation>

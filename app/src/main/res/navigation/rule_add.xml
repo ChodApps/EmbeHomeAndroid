@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rule_add"
+    app:startDestination="@id/ruleTypeSelection">
+
+    <fragment
+        android:id="@+id/ruleTypeSelection"
+        android:name="com.embehome.embehome.rules.fragment.RuleTypeSelection"
+        android:label="RuleTypeSelection" >
+        <action
+            android:id="@+id/action_ruleTypeSelection_to_selectRuleCondition"
+            app:destination="@id/selectRuleCondition"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_ruleTypeSelection_to_ruleSelectAction"
+            app:destination="@id/ruleSelectAction" />
+        <argument
+            android:name="ruleId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_ruleTypeSelection_to_createArea4"
+            app:destination="@id/createArea4" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectRuleCondition"
+        android:name="com.embehome.embehome.rules.fragment.SelectRuleCondition"
+        android:label="select_rule_condition_fragment"
+        tools:layout="@layout/select_rule_condition_fragment" >
+        <action
+            android:id="@+id/action_selectRuleCondition_to_ruleAddTime"
+            app:destination="@id/ruleAddTime"
+            app:popUpTo="@id/ruleTypeSelection" />
+        <action
+            android:id="@+id/action_selectRuleCondition_to_ruleAddSensor"
+            app:destination="@id/ruleAddSensor" />
+        <action
+            android:id="@+id/action_selectRuleCondition_to_ruleAddCounter"
+            app:destination="@id/ruleAddCounter"
+            app:popUpTo="@id/ruleTypeSelection" />
+    </fragment>
+    <fragment
+        android:id="@+id/ruleAddTime"
+        android:name="com.embehome.embehome.rules.fragment.RuleAddTime"
+        android:label="rule_add_time_fragment"
+        tools:layout="@layout/rule_add_time_fragment" />
+    <fragment
+        android:id="@+id/ruleAddCounter"
+        android:name="com.embehome.embehome.rules.fragment.RuleAddCounter"
+        android:label="rule_add_counter_fragment"
+        tools:layout="@layout/rule_add_counter_fragment" />
+    <fragment
+        android:id="@+id/ruleAddSensor"
+        android:name="com.embehome.embehome.rules.fragment.RuleAddSensor"
+        android:label="rule_add_sensor_fragment"
+        tools:layout="@layout/rule_add_sensor_fragment" >
+        <action
+            android:id="@+id/action_ruleAddSensor_to_ruleSelectSensor"
+            app:destination="@id/ruleSelectSensor"
+            app:popUpTo="@id/ruleTypeSelection" />
+    </fragment>
+    <fragment
+        android:id="@+id/ruleSelectAction"
+        android:name="com.embehome.embehome.rules.fragment.RuleSelectAction"
+        android:label="rule_select_action_fragment"
+        tools:layout="@layout/rule_select_action_fragment" >
+        <action
+            android:id="@+id/action_ruleSelectAction_to_selectScene"
+            app:destination="@id/selectScene"
+            app:popUpTo="@id/ruleTypeSelection" />
+        <action
+            android:id="@+id/action_ruleSelectAction_to_ruleSelectBoard"
+            app:destination="@id/ruleSelectBoard" />
+        <action
+            android:id="@+id/action_ruleSelectAction_to_ruleSelectSingleSwitch"
+            app:destination="@id/ruleSelectSingleSwitch"
+            app:popUpTo="@id/ruleTypeSelection" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectScene"
+        android:name="com.embehome.embehome.rules.fragment.SelectScene"
+        android:label="select_scene_fragment"
+        tools:layout="@layout/select_scene_fragment" />
+    <fragment
+        android:id="@+id/ruleSelectSensor"
+        android:name="com.embehome.embehome.rules.fragment.RuleSelectSensor"
+        android:label="rule_select_sensor_fragment"
+        tools:layout="@layout/rule_select_sensor_fragment" />
+    <fragment
+        android:id="@+id/ruleSelectBoard"
+        android:name="com.embehome.embehome.rules.fragment.RuleSelectBoard"
+        android:label="RuleSelectBoard" >
+        <action
+            android:id="@+id/action_ruleSelectBoard_to_ruleSelectSwitch"
+            app:destination="@id/ruleSelectSwitch"
+            app:popUpTo="@id/ruleTypeSelection"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/ruleSelectSwitch"
+        android:name="com.embehome.embehome.rules.fragment.RuleSelectSwitch"
+        android:label="RuleSelectSwitch" />
+    <fragment
+        android:id="@+id/createArea4"
+        android:name="com.embehome.embehome.Fragments.CreateArea"
+        android:label="CreateArea">
+    <argument
+        android:name="type"
+        app:argType="string"
+        android:defaultValue="nil" />
+    <argument
+        android:name="action"
+        app:argType="string"
+        android:defaultValue="nil" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+    <fragment
+        android:id="@+id/ruleSelectSingleSwitch"
+        android:name="com.embehome.embehome.rules.fragment.RuleSelectSingleSwitch"
+        android:label="RuleSelectSingleSwitch" />
+</navigation>

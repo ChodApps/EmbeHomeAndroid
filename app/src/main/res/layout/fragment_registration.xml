@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:context=".Fragments.Registration">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.embehome.embehome.viewModel.RegistrationViewModel" />
+
+    </data>
+
+<ScrollView
+    android:background="@drawable/main_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+
+            android:id="@+id/reg_back"
+            android:layout_width="@dimen/app_icon_wh"
+            android:layout_height="@dimen/app_icon_wh"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:onClick="@{() -> viewModel.regBack()}"
+            android:padding="@dimen/app_icon_padding"
+            android:src="@drawable/tt_cmn_enable_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text="@string/registration"
+            style="@style/H5"
+           android:textColor="@color/title_color"
+            app:layout_constraintTop_toBottomOf="@id/reg_back"
+           app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reg_email_layout"
+             android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="24dp"
+            style="@style/RoundedTextInputLayout"
+            app:hintEnabled="false"
+            app:errorEnabled="@{viewModel.regErrorEmail}"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:nextFocusDown="@id/reg_mobile_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reg_back">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/reg_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email"
+                android:background="@drawable/rounded_white_bg_with_border"
+                style="@style/textField"
+                android:inputType="textEmailAddress"
+                android:text="@={viewModel.regEmail}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reg_mobile_layout"
+              android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/RoundedTextInputLayout"
+            app:hintEnabled="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:counterEnabled="@{viewModel.regMobileCounter}"
+            app:errorEnabled="@{viewModel.regErrorMobile}"
+            app:layout_constraintTop_toBottomOf="@+id/reg_email_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/reg_mobile"
+                android:text="@={viewModel.regMobile}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mobile Number"
+                style="@style/textField"
+                android:background="@drawable/rounded_white_bg_with_border"
+                android:inputType="number"
+                android:maxLength="10"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reg_password_layout"
+             android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            style="@style/RoundedTextInputLayout"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reg_mobile_layout"
+            app:passwordToggleEnabled="true"
+            app:errorIconDrawable="@null"
+            app:errorEnabled="@{viewModel.regErrorPassword}">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/reg_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                style="@style/textField"
+                android:background="@drawable/rounded_white_bg_with_border"
+                android:text="@={viewModel.regPassword}"
+                android:inputType="textPassword"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reg_cnf_password_layout"
+             android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            style="@style/RoundedTextInputLayout"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:errorEnabled="@{viewModel.regErrorCnfPassword}"
+            app:layout_constraintTop_toBottomOf="@+id/reg_password_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/reg_cnf_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                style="@style/textField"
+                android:background="@drawable/rounded_white_bg_with_border"
+                android:text="@={viewModel.regCnfPassword}"
+                android:hint="Confirm Password" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/reg_sign_up"
+            app:backgroundTint="@color/login_btn_bg"
+             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:background="@color/text"
+            android:enabled="@{viewModel.registerBtn}"
+            android:text="Register"
+            android:onClick="@{() -> viewModel.register()}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            app:layout_constraintCircleRadius="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/reg_cnf_password_layout"
+            app:layout_constraintStart_toStartOf="@+id/reg_cnf_password_layout"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:checked="@={viewModel.regTermsAndCond}"
+            app:layout_constraintStart_toStartOf="@+id/reg_cnf_password_layout"
+            app:layout_constraintTop_toBottomOf="@+id/reg_cnf_password_layout" />
+
+        <TextView
+            android:id="@+id/open_terms"
+          android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/terms_and_condition"
+
+            app:layout_constraintBottom_toBottomOf="@+id/checkBox"
+            app:layout_constraintStart_toEndOf="@+id/checkBox"
+            app:layout_constraintTop_toTopOf="@+id/checkBox" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+</layout>

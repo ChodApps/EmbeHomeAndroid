@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.embehome.embehome.viewModel.FanControllerViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:background="@drawable/tt_fan_regulator_bg"
+        tools:context=".Fragments.FanController">
+
+
+
+
+
+
+        <TextView
+            android:id="@+id/textView97"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:maxLength="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView99"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:maxLength="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView97"
+            app:layout_constraintVertical_bias="0.3" />
+
+        <TextView
+            android:id="@+id/textView100"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:maxLength="0"
+            app:layout_constraintBottom_toTopOf="@+id/textView97"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.7" />
+
+        <TextView
+            android:id="@+id/textView102"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:maxLength="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.3"
+            app:layout_constraintStart_toEndOf="@+id/textView97"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView103"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:maxLength="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView97"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView104"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:maxLength="0"
+            app:layout_constraintBottom_toBottomOf="@+id/textView99"
+            app:layout_constraintEnd_toStartOf="@+id/textView102"
+            app:layout_constraintStart_toEndOf="@+id/textView103"
+            app:layout_constraintTop_toTopOf="@+id/textView100" />
+
+        <TextView
+            android:id="@+id/textView105"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:maxLength="0"
+            android:onClick="@{() -> viewModel.setLevel(2)}"
+            app:layout_constraintBottom_toTopOf="@+id/textView104"
+            app:layout_constraintEnd_toEndOf="@+id/textView104"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="@+id/textView104"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/textView106"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="@{() -> viewModel.setLevel(1)}"
+            app:layout_constraintBottom_toTopOf="@+id/textView107"
+            app:layout_constraintEnd_toStartOf="@+id/textView105"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView107"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:maxLength="0"
+            android:onClick="@{() -> viewModel.setLevel(0)}"
+            app:layout_constraintBottom_toBottomOf="@+id/textView104"
+            app:layout_constraintEnd_toStartOf="@+id/textView104"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView104" />
+
+        <TextView
+            android:id="@+id/textView108"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:maxLength="0"
+            android:onClick="@{() -> viewModel.setLevel(4)}"
+            app:layout_constraintBottom_toBottomOf="@+id/textView104"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView104"
+            app:layout_constraintTop_toTopOf="@+id/textView104" />
+
+        <TextView
+            android:id="@+id/textView109"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="8dp"
+            android:maxLength="0"
+            android:onClick="@{() -> viewModel.setLevel(3)}"
+            app:layout_constraintBottom_toTopOf="@+id/textView108"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView105"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView94"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            android:layout_margin="40dp"
+            android:padding="@dimen/padding_small_5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/tt_fan_regulator_knob"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

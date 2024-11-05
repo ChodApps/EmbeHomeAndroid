@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/room"
+    app:startDestination="@id/roomFragment2">
+
+    <fragment
+        android:id="@+id/roomFragment2"
+        android:name="com.embehome.embehome.Fragments.RoomFragment"
+        android:label="RoomFragment" >
+        <action
+            android:id="@+id/action_roomFragment2_to_addBoard"
+            app:destination="@id/addBoard" />
+        <action
+            android:id="@+id/action_roomFragment2_to_deviceArea"
+            app:destination="@id/deviceArea" />
+    </fragment>
+    <fragment
+        android:id="@+id/addBoard"
+        android:name="com.embehome.embehome.Fragments.AddBoard"
+        android:label="fragment_add_board"
+        tools:layout="@layout/fragment_add_board" >
+        <action
+            android:id="@+id/action_addBoard_to_createArea"
+            app:destination="@id/createArea" />
+        <argument
+            android:name="macID"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/createArea"
+        android:name="com.embehome.embehome.Fragments.CreateArea"
+        android:label="fragment_create_area"
+        tools:layout="@layout/fragment_create_area" />
+    <fragment
+        android:id="@+id/roomSwitchBoards"
+        android:name="com.embehome.embehome.Fragments.RoomSwitchBoards"
+        android:label="fragment_room_switch_boards"
+        tools:layout="@layout/fragment_room_switch_boards" >
+        <action
+            android:id="@+id/action_roomSwitchBoards_to_addRule"
+            app:destination="@id/addRule" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomScenes"
+        android:name="com.embehome.embehome.Fragments.RoomScenes"
+        android:label="fragment_room_scenes"
+        tools:layout="@layout/fragment_room_scenes" >
+        <action
+            android:id="@+id/action_roomScenes_to_scene"
+            app:destination="@id/scene" />
+        <action
+            android:id="@+id/action_roomScenes_to_sceneConfiguration"
+            app:destination="@id/sceneConfiguration" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomRemotes"
+        android:name="com.embehome.embehome.Fragments.RoomRemotes"
+        android:label="fragment_room_remotes"
+        tools:layout="@layout/fragment_room_remotes" >
+        <action
+            android:id="@+id/action_roomRemotes_to_remoteTV3"
+            app:destination="@id/remoteTV3" />
+        <action
+            android:id="@+id/action_roomRemotes_to_IRRemote3"
+            app:destination="@id/IRRemote3" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomMenu"
+        android:name="com.embehome.embehome.Fragments.RoomMenu"
+        android:label="fragment_room_menu"
+        tools:layout="@layout/fragment_room_menu" >
+        <action
+            android:id="@+id/action_roomMenu_to_hubReconfigure"
+            app:destination="@id/hubReconfigure" />
+        <action
+            android:id="@+id/action_roomMenu_to_updateHubData"
+            app:destination="@id/updateHubData" />
+        <action
+            android:id="@+id/action_roomMenu_to_otaUpdateStatusDisplayFragment"
+            app:destination="@id/otaUpdateStatusDisplayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/remoteTV3"
+        android:name="com.embehome.embehome.irb.fragment.RemoteTV"
+        android:label="RemoteTV">
+    <argument
+        android:name="macID"
+        app:argType="string"
+        android:defaultValue="nil" />
+    <argument
+        android:name="thingsID"
+        app:argType="integer"
+        android:defaultValue="-1" />
+    <argument
+        android:name="remoteName"
+        app:argType="string"
+        android:defaultValue="New Remote" />
+    <argument
+        android:name="serialNumber"
+        app:argType="string"
+        android:defaultValue="nil" />
+    <argument
+        android:name="operationType"
+        app:argType="string"
+        android:defaultValue="Create" />
+        <argument
+            android:name="remoteID"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/scene"
+        android:name="com.embehome.embehome.scene.fragment.Scene"
+        android:label="Scene" >
+        <argument
+            android:name="scenID"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_scene_to_sceneConfiguration"
+            app:destination="@id/sceneConfiguration"
+            app:popUpTo="@id/roomScenes" />
+    </fragment>
+    <activity
+        android:id="@+id/sceneConfiguration"
+        android:name="com.embehome.embehome.Activity.SceneConfiguration"
+        android:label="activity_scene_configuration"
+        tools:layout="@layout/activity_scene_configuration" >
+        <argument
+            android:name="sceneId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </activity>
+    <activity
+        android:id="@+id/deviceArea"
+        android:name="com.embehome.embehome.Activity.DeviceArea"
+        android:label="activity_device_area"
+        tools:layout="@layout/activity_device_area" >
+        <argument
+            android:name="areaId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="macId"
+            app:argType="string"
+            android:defaultValue="nil" />
+    </activity>
+    <fragment
+        android:id="@+id/hubReconfigure"
+        android:name="com.embehome.embehome.Fragments.HubReconfigure"
+        android:label="HubReconfigure" />
+    <fragment
+        android:id="@+id/IRRemote3"
+        android:name="com.embehome.embehome.irb.fragment.IRRemote"
+        android:label="IRRemote" />
+    <fragment
+        android:id="@+id/updateHubData"
+        android:name="com.embehome.embehome.Fragments.UpdateHubData"
+        android:label="UpdateHubData" />
+    <activity
+        android:id="@+id/addRule"
+        android:name="com.embehome.embehome.rules.AddRule"
+        android:label="activity_add_rule"
+        tools:layout="@layout/activity_add_rule" >
+        <argument
+            android:name="ruleId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </activity>
+    <fragment
+        android:id="@+id/otaUpdateStatusDisplayFragment"
+        android:name="com.embehome.embehome.ota.fragment.OtaUpdateStatusDisplayFragment"
+        android:label="OtaUpdateStatusDisplayFragment" >
+        <argument
+            android:name="type"
+            app:argType="string"
+            android:defaultValue="-" />
+        <argument
+            android:name="version"
+            app:argType="string"
+            android:defaultValue="0.0.0" />
+        <argument
+            android:name="link"
+            app:argType="string"
+            android:defaultValue="-" />
+        <argument
+            android:name="size"
+            app:argType="string"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>

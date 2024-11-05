@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <dimen name="splash_width">100dp</dimen>
+    <dimen name="login_logo_width">234dp</dimen>
+    <dimen name="login_logo_height">48dp</dimen>
+
+
+    <dimen name="null_space_0dp">0dp</dimen>
+    <dimen name="space_small_8dp">8dp</dimen>
+    <dimen name="space_med_16dp">16dp</dimen>
+    <dimen name="space_large_32dp">32dp</dimen>
+    <dimen name="space_xl_64dp">64dp</dimen>
+    <dimen name="space_xxl_80dp">80dp</dimen>
+    <dimen name="space_xxxl_128dp">128dp</dimen>
+
+
+    <dimen name="padding_mini_3dp">3dp</dimen>
+    <dimen name="padding_small_5dp">5dp</dimen>
+    <dimen name="padding_med_8dp">8dp</dimen>
+    <dimen name="padding_large_10dp">10dp</dimen>
+    <dimen name="padding_xxl_24dp">24dp</dimen>
+
+    <dimen name="app_icon_wh">48dp</dimen>
+    <dimen name="app_icon_padding">10dp</dimen>
+
+    <dimen name="app_round_btn">30dp</dimen>
+    <dimen name="app_icon_radius">15dp</dimen>
+    <dimen name="app_round_padding">0dp</dimen>
+
+    <dimen name="setting_icon_w">34dp</dimen>
+    <dimen name="setting_icon_h">34dp</dimen>
+
+
+    <dimen name="radius_small_5dp">5dp</dimen>
+    <dimen name="radius_med_10dp">10dp</dimen>
+    <dimen name="radius_mini_3dp">3dp</dimen>
+    <dimen name="radius_large_16dp">16dp</dimen>
+
+
+    <dimen name="H1">96sp</dimen>
+    <dimen name="H2">60sp</dimen>
+    <dimen name="H3">48sp</dimen>
+    <dimen name="H4">34sp</dimen>
+    <dimen name="H5">24sp</dimen>
+    <dimen name="H6">20sp</dimen>
+    <dimen name="heading_sub_16sp">16sp</dimen>
+    <dimen name="Body1">16sp</dimen>
+    <dimen name="Body2">14sp</dimen>
+    <dimen name="OverLine">10sp</dimen>
+    <dimen name="heading_sub_14sp">14sp</dimen>
+    <dimen name="heading_para_12sp">12sp</dimen>
+    <dimen name="heading_sub_18sp">18sp</dimen>
+    <dimen name="mis_48dp">40dp</dimen>
+    <dimen name="mis_72dp">72dp</dimen>
+    <dimen name="otp_width_60dp">60dp</dimen>
+
+    <dimen name="full_remote_mini_btn_width">32dp</dimen>
+    <dimen name="full_remote_mini_btn_height">32dp</dimen>
+    <dimen name="full_remote_small_btn_width">40dp</dimen>
+    <dimen name="full_remote_small_btn_height">40dp</dimen>
+    <dimen name="full_remote_reg_btn_width">48dp</dimen>
+    <dimen name="full_remote_reg_btn_height">48dp</dimen>
+    <dimen name="full_remote_med_btn_width">56dp</dimen>
+    <dimen name="full_remote_med_btn_height">56dp</dimen>
+    <dimen name="full_remote_large_btn_width">64dp</dimen>
+    <dimen name="full_remote_large_btn_height">64dp</dimen>
+
+</resources>

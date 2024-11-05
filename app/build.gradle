@@ -1,0 +1,156 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
+
+
+android {
+    compileSdkVersion 34
+
+
+    defaultConfig {
+        applicationId "com.embehome.embehome"
+        minSdkVersion 26
+        targetSdkVersion 34
+        versionCode 17
+        versionName "1.1.9"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                        "room.incremental": "true"
+                ]
+            }
+        }
+    }
+    lint {
+        baseline = file("lint-baseline.xml")
+    }
+    buildTypes {
+        release {
+            /*minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'*/
+            buildConfigField "boolean", "logs", "false"
+        }
+        debug {
+            buildConfigField "boolean", "logs", "true"
+            /* minifyEnabled false
+             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'*/
+        }
+    }
+
+    buildFeatures {
+        dataBinding {
+            enabled = true
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':serviceLibrary')
+    //noinspection GradleDependency
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // Retrofit Dependency
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    // GSon Dependency
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //MQTT Dependency
+    //new mqtt library that supports android 12
+//    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+//    implementation 'com.github.hannesa2:paho.mqtt.android:3.3.5'
+
+    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5'
+//    implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
+//    implementation 'com.github.hannesa2:paho.mqtt.android:4.0'
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
+
+
+    //Coroutines Dependency
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+
+    //Material Design Dependency
+    implementation 'com.google.android.material:material:1.7.0'
+
+
+    //MVVM Dependency
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.fragment:fragment-ktx:1.6.2'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+
+
+    // LiveData
+    //noinspection GradleDependency
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    //Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:2.5.3"
+    implementation "androidx.navigation:navigation-ui-ktx:2.5.3"
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+    //noinspection LifecycleAnnotationProcessorWithJava8
+    kapt "androidx.lifecycle:lifecycle-compiler:2.8.4"
+
+    //Worker Manager
+//    implementation "androidx.work:work-runtime-ktx:2.4.0"
+    implementation 'androidx.work:work-runtime-ktx:2.7.1'
+
+    //FireBase
+    implementation platform('com.google.firebase:firebase-bom:31.1.1') // add this
+//    implementation 'com.google.firebase:firebase-messaging:23.0.0'
+//    implementation 'com.google.firebase:firebase-iid:21.1.0' // add this
+
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+    implementation 'com.google.firebase:firebase-iid:21.1.0'
+    implementation 'com.google.firebase:firebase-messaging:23.1.1'
+    implementation 'com.google.firebase:firebase-analytics-ktx:21.2.0'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.2'
+
+
+    //Room SQLite"
+    implementation 'androidx.room:room-ktx:2.4.3'
+    implementation 'androidx.room:room-runtime:2.4.3'
+    kapt 'androidx.room:room-compiler:2.6.1'
+    testImplementation 'androidx.room:room-testing:2.4.3'
+
+    //Chart
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+//    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    androidTestImplementation 'androidx.annotation:annotation:1.5.0'
+//    implementation 'androidx.cardview:cardview:1.0.0'
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.media:media:1.6.0'
+
+
+    // MQTT Library
+//    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5'
+////new mqtt library that supports android 12 & above
+//    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+//    implementation 'com.github.hannesa2:paho.mqtt.android:4.3.beta2'
+    implementation 'com.github.qamarelsafadi:CurvedBottomNavigation:0.1.3'
+}

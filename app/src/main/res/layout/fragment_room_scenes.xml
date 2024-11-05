@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.embehome.embehome.scene.viewModel.RoomSceneViewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.RoomScenes">
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_sans_black"
+        android:text="Implementation Is Pending"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/room_scene_home"
+        android:layout_width="@dimen/app_icon_wh"
+        android:layout_height="@dimen/app_icon_wh"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="@{() -> viewModel.back()}"
+        android:padding="@dimen/app_icon_padding"
+        android:src="@drawable/tt_cmn_enable_home"
+        android:tint="@color/colorAccent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/room_scene_add"
+        android:layout_width="@dimen/mis_48dp"
+        android:layout_height="@dimen/mis_48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:padding="@dimen/padding_large_10dp"
+        android:visibility="gone"
+        android:onClick="@{() -> viewModel.add()}"
+        android:src="@drawable/plus_sign_64px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/nunito_sans_black"
+        android:text="Scene"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/room_scene_home"
+        app:layout_constraintEnd_toStartOf="@+id/room_scene_add"
+        app:layout_constraintStart_toEndOf="@+id/room_scene_home"
+        app:layout_constraintTop_toTopOf="@+id/room_scene_home"
+        app:layout_constraintVertical_bias=".5" />
+
+    <TextView
+        android:id="@+id/textView243"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        style="@style/SubHeading"
+        android:text="Scenes not available."
+        android:textAlignment="center"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView138" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/room_scene_home_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/room_scene_home"
+        app:layout_constraintVertical_bias="1.0"
+        app:spanCount="1"
+        tools:listitem="@layout/_room_scene" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        android:visibility="gone"
+        android:onClick="@{() -> viewModel.add()}"
+        app:backgroundTint="@color/colorAccent"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/tt_cmn_disable_plus" />
+
+    <TextView
+        android:id="@+id/textView138"
+        style="@style/Title"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:textColor="#f7b253"
+        android:text="SCENES"
+        android:textAlignment="center"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/room_scene_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/room_scene_home" />
+
+    <ImageView
+        android:id="@+id/imageView276"
+        android:layout_width="@dimen/app_icon_wh"
+        android:layout_height="@dimen/app_icon_wh"
+        android:layout_marginEnd="8dp"
+        android:onClick="@{() -> viewModel.add()}"
+        android:padding="@dimen/app_icon_padding"
+        app:layout_constraintBottom_toBottomOf="@+id/textView138"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView138"
+        app:srcCompat="@drawable/tt_cmn_enable_plus" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
