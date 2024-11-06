@@ -106,7 +106,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/topConstrantLayout">
+            app:layout_constraintTop_toBottomOf="@+id/topConstrantLayout"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/center_separator"
@@ -213,7 +214,7 @@
                         app:layout_constraintTop_toTopOf="parent"
                         />
 
-                    <androidx.recyclerview.widget.RecyclerView
+                   <!-- <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/home_hub_list"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
@@ -228,10 +229,10 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/cardView25"
-                        tools:listitem="@layout/_hub" />
+                        tools:listitem="@layout/_hub" />-->
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView25"
+                        android:id="@+id/aacardView25"
                         android:layout_width="@dimen/app_round_btn"
                         android:layout_height="@dimen/app_round_btn"
                         android:layout_marginTop="8dp"
@@ -314,7 +315,101 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>&ndash;&gt;
             </androidx.cardview.widget.CardView>-->
         </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/hubConstraint"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topConstrantLayout">
+        <LinearLayout
+            android:id="@+id/lladdBtns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <LinearLayout
+                android:id="@+id/llAddHub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> viewModel.addHub()}"
+                android:layout_margin="@dimen/padding_small_5dp"
+                android:orientation="horizontal"
+                android:background="@drawable/rounded_button_h"
+                android:padding="@dimen/padding_large_10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <TextView
+                    android:id="@+id/tvAddHub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_add_hub"
+                    android:fontFamily="@font/cairo"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/Body2"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/llAddDevice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> viewModel.openSmartBulb()}"
+                android:layout_margin="@dimen/padding_small_5dp"
+                android:padding="@dimen/padding_large_10dp"
+                android:orientation="horizontal"
+                android:background="@drawable/rounded_button_n"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <TextView
+                    android:id="@+id/tvAddDevice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_add_device"
+                    android:fontFamily="@font/cairo"
+                    android:textColor="@color/primary_hover"
+                    android:textSize="@dimen/Body2"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lladdBtns">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_hub_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="45dp"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/_hub" />
+        </LinearLayout>
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <ImageView
+            android:id="@+id/home_footer_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="4dp"
+            android:src="@drawable/home_switch_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/hubConstraint" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -79,6 +79,15 @@
     <string name="home">Home</string>
 
     <string name="login_txt">Login</string>
-    <string name="signup_text">Sign up</string><!--login_register-->
+    <string name="signup_text">Sign up</string>
+    <string name="text_add_hub"> + Add Hub</string>
+    <string name="text_add_device"> + Add Device</string><!--login_register-->
+
+    <string name="text_hubcell_1">Status</string>
+    <string name="text_hubcell_11">Online</string>
+    <string name="text_hubcell_12">Offline</string>
+    <string name="text_hubcell_2">Room</string>
+    <string name="text_hubcell_3">Device</string>
+    <string name="text_hubcell_4">Last online time</string>
 
 </resources>
