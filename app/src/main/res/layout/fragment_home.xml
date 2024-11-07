@@ -20,28 +20,34 @@
             android:layout_width="match_parent"
 
             android:layout_height="200dp"
-            android:background="@drawable/homebg1"
+            android:background="@drawable/rounded_button_h"
            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/imageView7"
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="25dp"
                 android:layout_width="@dimen/app_icon_wh"
                 android:layout_height="@dimen/app_icon_wh"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
+                android:padding="@dimen/app_icon_padding"
+                android:backgroundTint="@color/primary_bg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="@dimen/app_icon_wh"
+                android:layout_height="@dimen/app_icon_wh"
+                android:tint="@color/primary_hover"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="user"
                 android:onClick="@{() -> viewModel.userProfile()}"
-                android:padding="@dimen/app_icon_padding"
-                android:tint="#fdfa00"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+
                 app:srcCompat="@drawable/tt_cmn_enable_male2" />
 
-
+            </androidx.cardview.widget.CardView>
             <ImageView
                 android:id="@+id/imageView14"
                 android:layout_width="@dimen/app_icon_wh"
@@ -51,11 +57,11 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:onClick="@{() -> viewModel.refreshHubData()}"
                 android:padding="@dimen/app_icon_padding"
-                android:tint="@color/colorAccent"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/tt_cmn_enable_refresh" />
+                app:srcCompat="@drawable/tt_cmn_enable_refresh"
+                app:tint="@color/colorAccent" />
 
             <TextView
                 android:id="@+id/textView25"
@@ -75,12 +81,12 @@
                 android:background="?attr/selectableItemBackground"
                 android:onClick="@{() -> viewModel.openNotification()}"
                 android:padding="@dimen/app_icon_padding"
-                android:tint="@color/colorAccent"
                 android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView14"
                 app:layout_constraintEnd_toStartOf="@+id/imageView14"
                 app:layout_constraintTop_toTopOf="@+id/imageView14"
-                app:srcCompat="@drawable/tt_notification_enable_ring" />
+                app:srcCompat="@drawable/tt_notification_enable_ring"
+                app:tint="@color/colorAccent" />
 
            <!-- <TextView
                 android:id="@+id/textView19"
@@ -328,7 +334,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -372,7 +377,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/text_add_device"
                     android:fontFamily="@font/cairo"
-                    android:textColor="@color/primary_hover"
+                    android:textColor="@color/text_color"
                     android:textSize="@dimen/Body2"
                     />
             </LinearLayout>

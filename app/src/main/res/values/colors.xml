@@ -38,9 +38,10 @@
 
     <color name="color_tabbar_bg">#108B8B</color>
     <color name="primary_bg">#F7F7F7</color>
-    <color name="primary_bg_grad">#F5F5F5</color>
-    <color name="primary_hover">#108B8B</color>
-    <color name="primary_hover_grad">#118C8C</color>
-    <color name="text_color">#BC2941</color>
+    <color name="primary_bg_grad">#E1E1E4</color>
+    <color name="primary_hover">#40898A</color>
+    <color name="primary_hover_grad">#3F8788</color>
+    <color name="text_color">#424242</color>
+    <color name="text_sub_color">#ABABAB</color>
 
 </resources>

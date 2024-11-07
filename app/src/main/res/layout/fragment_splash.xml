@@ -3,27 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-   android:background="@drawable/splash_embe"
+   android:background="@drawable/splash_bg"
     android:layout_height="match_parent"
     tools:context=".Fragments.Splash">
 
     <ImageView
         android:id="@+id/centerImage"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="400dp"
-        android:src="@drawable/embelogo256" />
+        android:layout_marginTop="20dp"
+        android:src="@drawable/splash_icon" />
 
 
 
     <ImageView
         android:id="@+id/bottomMade"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/madeindia1" />
+        android:background="@drawable/splash_bottom" />
 
    <!--
        <ImageView
